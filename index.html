@@ -1,0 +1,434 @@
+<!doctype html>
+<!--
+=====================================================================
+ HOW TO EDIT THIS SITE (no coding knowledge needed)
+ Scroll down to the line that says  "EDIT HERE"  (inside <script>).
+ Everything you will ever change is in two blocks there:
+   1) CONFIG    -> your contact details, photos, About text
+   2) PROJECTS  -> each project's text, background picture, pictures, video
+ Only change the text between the quote marks ' '.  Do not delete commas,
+ brackets [ ] or braces { }.  Save the file, then refresh the page.
+=====================================================================
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Izn Siddiqui | Electrical Engineering, Embedded Systems & Robotics</title>
+<meta name="description" content="Portfolio of Izn Siddiqui, electrical engineer from NUST based in Karachi, Pakistan: embedded systems, robotics, IoT and power distribution.">
+<style>
+:root{--bg:#0a1230;--panel:#101a3a;--panel2:#17234a;--text:#eef1fa;--muted:#a3afcf;--a:#f2c94c;--b:#7fa8f0;--line:#25335f;--r:16px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.65 Cambria,"Cambria Math",Georgia,serif}
+button,input,canvas,dialog{font-family:inherit}
+a{color:var(--a);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+nav{position:fixed;inset:0 0 auto 0;z-index:20;backdrop-filter:blur(10px);background:rgba(8,12,30,.65);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px}
+nav b{letter-spacing:.5px}nav div a{margin-left:22px;color:var(--muted);font-size:15px}nav div a:hover{color:var(--text);text-decoration:none}
+#hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;background:#070c22}
+#hero canvas{position:absolute;inset:0;width:100%;height:100%}
+#hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,10,28,.72),rgba(6,10,28,.18) 70%)}
+#hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;width:100%}
+.kicker{color:var(--a);font-size:14px;letter-spacing:3px;text-transform:uppercase}
+h1{font-size:clamp(42px,7vw,80px);line-height:1.05;margin:.2em 0}
+h1 span{background:linear-gradient(90deg,var(--a),var(--b));-webkit-background-clip:text;background-clip:text;color:transparent}
+.role{font-size:clamp(19px,2.6vw,27px);color:#c9d3ee;min-height:1.5em;margin-bottom:26px}
+.role em{color:var(--a);font-style:italic;transition:opacity .3s}
+.btn{display:inline-block;padding:11px 20px;border-radius:999px;border:1px solid var(--line);color:var(--text);margin:0 10px 10px 0;transition:.2s;background:rgba(10,18,48,.5)}
+.btn.p{background:linear-gradient(90deg,var(--a),var(--b));color:#0a1230;border:0;font-weight:700}
+.btn:hover{transform:translateY(-2px);text-decoration:none;border-color:var(--a)}
+.portrait{width:clamp(150px,24vw,260px);aspect-ratio:1;border-radius:50%;object-fit:cover;border:3px solid var(--a);box-shadow:0 0 50px rgba(242,201,76,.25)}
+.slot{display:flex;align-items:center;justify-content:center;text-align:center;border:2px dashed #3a4c82;color:#7d8bb5;font-size:14px;border-radius:12px;background:rgba(16,26,58,.5);padding:8px}
+.portrait.slot{border-radius:50%}
+section{padding:90px 0}
+h2{font-size:34px;margin:0 0 8px}.sub{color:var(--muted);margin:0 0 34px;max-width:700px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}
+.chip{background:var(--panel);border:1px solid var(--line);color:var(--muted);padding:6px 14px;border-radius:999px;cursor:pointer;font-size:15px}
+.chip.on,.chip:hover{color:var(--text);border-color:var(--a)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:22px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;cursor:pointer;transition:.25s;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-6px);border-color:var(--a);box-shadow:0 14px 40px rgba(242,201,76,.08)}
+.vis,.banner{position:relative;overflow:hidden;background-size:cover;background-position:center}.vis{height:210px}.bgb{position:absolute;inset:-24px;background-size:cover;background-position:center;filter:blur(22px) brightness(.5)}.vis img,.banner img{position:relative;display:block;width:100%;height:100%;object-fit:contain}.meta{font-size:13px;color:var(--muted)}.card.static{cursor:default}.card.static:hover{transform:none;border-color:var(--line);box-shadow:none}
+.card .in{padding:18px;display:flex;flex-direction:column;gap:10px;flex:1}
+.card h3{margin:0;font-size:20px}.card p{margin:0;color:var(--muted);font-size:16px}
+.tags{display:flex;flex-wrap:wrap;gap:6px}.tag{font-size:13px;color:var(--a);background:rgba(242,201,76,.09);padding:2px 10px;border-radius:999px}
+.mets{display:flex;gap:18px;margin-top:auto;padding-top:8px;flex-wrap:wrap}
+.met b{display:block;font-size:24px}.met span{font-size:13px;color:var(--muted)}
+.status{font-size:13px;color:#fbbf24}.req{font-style:italic;color:var(--a);font-size:15px;margin-top:auto}
+dialog{width:min(860px,94vw);max-height:90vh;border:1px solid var(--line);border-radius:var(--r);background:var(--panel);color:var(--text);padding:0}
+dialog::backdrop{background:rgba(3,6,16,.78);backdrop-filter:blur(4px)}
+.dh{position:sticky;top:0;background:var(--panel);display:flex;justify-content:space-between;align-items:center;padding:16px 24px;border-bottom:1px solid var(--line);z-index:2}
+.dh h3{margin:0}.x{background:none;border:0;color:var(--muted);font-size:28px;cursor:pointer}
+.banner{height:320px;border-radius:12px;margin-top:18px}
+.db{padding:6px 24px 28px}.db h4{margin:26px 0 8px;color:var(--a);font-size:14px;letter-spacing:1.5px;text-transform:uppercase}
+.db ul{margin:0;padding-left:20px;color:#d4dcf2}.db li{margin:5px 0}
+.disc{color:var(--muted);font-size:15px;margin:10px 0 0}.disc b{color:var(--text)}
+.note{background:rgba(251,191,36,.07);border:1px solid rgba(251,191,36,.3);border-radius:12px;padding:12px 16px;color:#ecdcae;font-size:15px}
+.steps{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px}
+.step{background:var(--panel2);border:1px solid var(--line);color:var(--muted);border-radius:10px;padding:7px 12px;font-size:14px;cursor:pointer}
+.step.on{border-color:var(--a);color:var(--text)}
+.sd{background:var(--panel2);border-radius:12px;padding:14px 16px;min-height:64px;color:#d4dcf2}
+.bars div{margin:8px 0;font-size:15px}.bar{height:8px;background:var(--panel2);border-radius:99px;overflow:hidden;margin-top:4px}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--a),var(--b));transition:width 1s}
+.pg{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:center}
+canvas#arm{background:#0b1330;border:1px solid var(--line);border-radius:12px;max-width:100%}
+.pg label{display:block;font-size:14px;color:var(--muted);margin:8px 0 2px}.pg input{width:100%}
+iframe{width:100%;aspect-ratio:16/9;border:0;border-radius:12px;background:#000}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.gal img,.gal .slot{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;border:1px solid var(--line)}
+.skills{display:flex;flex-wrap:wrap;gap:10px}.skills span{background:var(--panel);border:1px solid var(--line);padding:8px 14px;border-radius:12px;font-size:15px}
+.about{display:grid;grid-template-columns:1.1fr 1fr;gap:34px;align-items:start}
+.about p{margin:0 0 14px;color:#d4dcf2}
+.agal{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.agal img,.agal .slot{width:100%;aspect-ratio:1;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+.ct{margin:0 0 18px;color:var(--muted)}
+footer{padding:40px 0;color:var(--muted);text-align:center;font-size:15px;border-top:1px solid var(--line)}
+.rv{opacity:0;transform:translateY(24px);transition:.7s}.rv.in{opacity:1;transform:none}
+@media(max-width:720px){.pg,.about{grid-template-columns:1fr}#hero .wrap{grid-template-columns:1fr}.portrait{order:-1;width:140px}nav div a:nth-child(n+3){display:none}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><b>IS</b><div><a href="#projects">Projects</a><a href="#industry">Industry</a><a href="#about">About</a><a href="#contact">Contact</a></div></div></nav>
+
+<header id="hero"><canvas id="bg"></canvas><canvas id="stars"></canvas>
+<div class="wrap">
+ <div>
+  <div class="kicker">Portfolio</div>
+  <h1>Izn <span>Siddiqui</span></h1>
+  <div class="role">I build <em id="rot">robots</em></div>
+  <a class="btn p" href="#projects">See my projects</a><a class="btn" href="#contact">Contact me</a>
+ </div>
+ <div id="profile"></div>
+</div></header>
+
+<section id="projects"><div class="wrap">
+<h2 class="rv">Selected projects</h2>
+<p class="sub rv">Click a card for the details, the numbers and an honest note on what is and is not verified.</p>
+<div class="chips rv" id="chips"></div>
+<div class="grid" id="grid"></div>
+</div></section>
+
+<section id="industry"><div class="wrap">
+<h2 class="rv">Industry work: Thal Engineering</h2>
+<p class="sub rv">Power-distribution monitoring and control products. Details are shared on request.</p>
+<div class="grid" id="igrid"></div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+<h2 class="rv">Toolbox</h2><p class="sub rv">What these projects actually used.</p>
+<div class="skills rv" id="sk"></div>
+</div></section>
+
+<section id="about"><div class="wrap">
+<h2 class="rv">About me</h2>
+<div class="about rv"><div id="atext"></div><div class="agal" id="agal"></div></div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+<h2 class="rv">Get in touch</h2>
+<p class="sub rv">Open to master's programs and engineering roles in electrical engineering, embedded systems, robotics and applied ML.</p>
+<p class="ct rv" id="loc"></p>
+<div class="rv" id="links"></div>
+</div></section>
+<footer>© <span id="yr"></span> Izn Siddiqui</footer>
+
+<dialog id="dlg"></dialog>
+
+<script>
+/* =====================================================================
+   EDIT HERE  (1 of 2):  YOUR PERSONAL DETAILS
+   ===================================================================== */
+const CONFIG={
+  email:'iznsiddiqui03@gmail.com',
+  phone:'+92 336 6846708',
+  location:'Karachi, Pakistan',
+  github:'https://github.com/iznsiddiqui',
+  linkedin:'https://www.linkedin.com/in/izn-siddiqui/',        // <- paste your LinkedIn profile link between the quotes
+  cv:'',              // <- optional, e.g. 'assets/cv.pdf'
+
+  profile:'',         // <- your main photo (shown in the top section), e.g. 'assets/me.jpg'
+
+  // About me: each line between quotes is one paragraph. Rewrite freely.
+  about:[
+    'I am an electrical engineer from NUST, based in Karachi, Pakistan. I enjoy projects where I can own the whole stack: circuits, firmware, mechanical design and software.',
+    'My work spans a student robotics and ML education kit, IoT systems, and industrial monitoring and control products for power distribution.'
+  ],
+  // 4 photos of yourself for the About section. Leave '' for an empty slot.
+  aboutPhotos:['','','',''],
+
+  // true  = empty picture slots show a dashed "Add picture" box (so you can see where they go)
+  // false = empty slots are hidden. Set to false when you are done.
+  showEmptySlots:true
+};
+
+/* Picture / video links can be written in 3 ways:
+   1) a file you uploaded to your GitHub repo:   'assets/photo1.jpg'
+   2) a Google Drive "share" link (set sharing to "Anyone with the link")
+   3) any normal web image link                  'https://...'
+   For videos paste a Google Drive or YouTube link into  video:''  */
+
+/* =====================================================================
+   EDIT HERE  (2 of 2):  YOUR PROJECTS
+   bg   = background picture of the card and popup
+   pics = pictures inside the popup (add or remove '' between the brackets)
+   ===================================================================== */
+const PROJECTS=[
+{
+ id:'buildit',title:'Build-IT: Modular Robotics Kit for STEM Education',year:'2024-25',ctx:'NUST Final Year Project',
+ tags:['Robotics','Embedded','ML','Mechanical'],
+ disciplines:['Electrical Engineering','Embedded Systems','Mechanical Design','Machine Learning'],
+ grad:'linear-gradient(135deg,#7f1d1d,#1e1b4b)',
+ bg:'https://drive.google.com/file/d/10XUOO2bJVVjfx0JPNBBZHrPf8CP8heZ1/view?usp=sharing',
+ pics:['','',''],
+ video:'',
+ summary:'A snap-together robotics kit with a block-coding web app and on-device few-shot object detection, built to make hands-on robotics and ML education affordable and locally available in Pakistan.',
+ problem:'STEM kits are expensive and hard to source in Pakistan, and practical machine learning is almost absent from school-level robotics. Build-IT is a modular alternative aimed at students.',
+ role:'Designed and built the project end to end: mechanical design (3D-printed modules, snap-fit pin, gripper), embedded firmware, the Blockly web app and backend, and the ML pipeline.',
+ mets:[{v:59.2,d:1,u:' Wh',l:'4S Li-ion pack'},{v:1.2,d:1,u:'',l:'FEA safety factor, snap-fit pin'},{v:95.2,d:1,u:'%',l:'Detection precision'}],
+ highlights:[
+  'Modular PLA building blocks with a custom snap-fit pin, refined through several iterations (press-fit, rotational, magnetic) and validated in ANSYS.',
+  'Power Brick enclosure (129 x 125 x 110 mm, 70 connecting slots) housing a Raspberry Pi 5, ESP32-S3, battery and buck converters.',
+  'Sensor and motor blocks (IR, ultrasonic, colour) plus a 2-DOF gripper, all on RJ45 connectors for child-friendly, repeatable plug-in wiring.',
+  'Replaced a ROS 2 setup with a lightweight framework after measuring latency in sensor reads; the ESP32-S3 runs low-level control as embedded firmware.',
+  'Custom C++ library with FreeRTOS tasks that poll IR and ultrasonic sensors in the background and return a stable 5-sample rolling average.',
+  'Few-shot object detection: 5 photos per object, no large dataset needed.'],
+ steps:[
+  ['Block code','Students drag custom Blockly blocks (run motor, read IR, display text, if/loops) in the browser.'],
+  ['Convert','A Flask backend parses the Blockly XML in Python and generates Arduino C++ against the Build-IT library.'],
+  ['Deploy','The .ino file is sent to the Raspberry Pi over SCP; Arduino CLI on the Pi compiles it and uploads it to the ESP32-S3.'],
+  ['Run','The ESP32 drives motors and sensors in real time and signals the Pi over GPIO when a camera capture or ML inference is needed.'],
+  ['ML','YOLOv4-Tiny finds the object, MobileNetV2 turns the crop into a 1280-d vector, and cosine similarity against class prototypes names it.']],
+ bars:[['Orange cup',100],['Pink cup',100],['Green block',60],['Tang pack',46.7]],barsTitle:'Per-class recall (75 test images, 4 objects)',
+ notes:['Overall on the test set: precision 95.2% (59/62), recall 78.7% (59/75), F1 0.86.','Estimated runtime of about 86 minutes comes from a component power table (about 41 W worst case), not a measured run.','Demonstrated in person to students at a national engineering robotics contest.'],
+ links:[['Source code on GitHub','https://github.com/iznsiddiqui/Build-It']]
+},
+{
+ id:'arm',title:'3-DOF Robotic Arm with Wi-Fi Control',year:'2025',ctx:'NUST coursework project',
+ tags:['Robotics','Embedded','IoT'],
+ disciplines:['Electrical Engineering','Embedded Systems','Robotics & Kinematics'],
+ grad:'linear-gradient(135deg,#0f766e,#1e293b)',
+ bg:'',
+ pics:['','',''],
+ video:'https://drive.google.com/file/d/1ZfDNyShleqSVot1hS_fTqfa25xlKbjhg/view?usp=sharing',   // <- paste your Google Drive / YouTube video link here
+ summary:'A low-cost servo arm controlled from any phone browser, paired with a MATLAB kinematic model of the same arm.',
+ problem:'Prototype a functional arm of the kind used in packing and filling lines, using cheap parts, and keep a simulation that mirrors the hardware.',
+ role:'Built the ESP32-S3 firmware and browser control app, and the MATLAB rigid-body-tree model. (Team project: see the report for the full split.)',
+ mets:[{v:4,d:0,u:'',l:'Servos (3 joints + gripper)'},{v:14,d:0,u:' cm',l:'Modelled link reach'},{v:2,d:0,u:'',l:'Home presets (hard / soft)'}],
+ highlights:[
+  'The ESP32-S3 hosts its own Wi-Fi access point and serves a web page with sliders for base, shoulder and elbow, plus gripper buttons. No app install needed.',
+  'Hard-home and user-defined soft-home positions so the arm can return to a known pose.',
+  'MATLAB Robotics Toolbox model built from Denavit-Hartenberg parameters with interactive joint sliders.',
+  'Practical fixes documented in the report: servo jitter, 5 V supply sag and Wi-Fi dropouts.'],
+ steps:[
+  ['Phone','Open the arm\'s Wi-Fi network and visit its address in a browser.'],
+  ['Web UI','Sliders send joint angles to the ESP32 with lightweight HTTP requests.'],
+  ['ESP32-S3','Parses the angles and writes them to four SG-90 servos.'],
+  ['MATLAB twin','The same arm is modelled with DH parameters to visualise reach and joint limits.']],
+ widget:'arm',
+ notes:['The report describes the build qualitatively; no accuracy or repeatability figures were measured, so none are claimed here.','The playground above is a simple 2-link side view using the modelled 5 cm and 9 cm links. It is illustrative and not calibrated to the physical arm.'],
+ links:[]
+},
+{
+ id:'hydro',title:'IoT Smart NFT Hydroponic Controller',year:'2023',ctx:'Internship project',
+ tags:['IoT','Embedded'],status:'Design and firmware',
+ disciplines:['Electrical Engineering','Embedded Systems','IoT'],
+ grad:'linear-gradient(135deg,#166534,#0f172a)',
+ bg:'',
+ pics:['','',''],
+ video:'',
+ summary:'An ESP32 monitoring and control design for a nutrient-film hydroponic lettuce system, with a Blynk dashboard, safety interlocks and local control that keeps working when Wi-Fi drops.',
+ problem:'Small hydroponic setups need constant manual checks. A missed low-water or pump failure can stop nutrient delivery and damage the crop.',
+ role:'Designed the electronics architecture, wrote the firmware and specified the dashboard and calibration procedures.',
+ mets:[{v:8,d:0,u:'',l:'Measured parameters'},{v:5,d:0,u:'',l:'Relay-controlled loads'},{v:20,d:0,u:'',l:'Dashboard datastreams'}],
+ highlights:[
+  'Reads pH, TDS, water and air temperature, humidity, light, reservoir level and flow from a single ESP32.',
+  'Auto mode with a fan hysteresis band, a lighting schedule and a refill pump with a 90 s timeout; manual mode from the Blynk app.',
+  'Safety interlocks: pumps never run on a LOW level, refill stops at HIGH, and a flow fault alert fires if the pump runs with no flow.',
+  'Local control continues when Wi-Fi or the cloud is unavailable.',
+  'Pin map, wiring notes, calibration procedures and failure-mode table documented.'],
+ steps:[
+  ['Sense','Averaged ADC reads for pH and TDS, 1-Wire water temperature, DHT22, BH1750 and a flow sensor.'],
+  ['Decide','AUTO or MANUAL logic with interlocks applied first.'],
+  ['Act','Five relays drive circulation, air, light, fan and refill.'],
+  ['Report','Telemetry and alerts go to the Blynk dashboard.']],
+ notes:['This is a design and firmware project completed during a 2023 internship; the documentation was written up for this portfolio. The full-size growing structure was not built, and sensor values would need calibration before use.','Sample dashboards in the write-up show illustrative values, not measured data.'],
+ links:[]
+}
+];
+
+/* Industry work (Thal Engineering). Display-only cards: heading, one-liner and a background picture (bg). They do not open. */
+const INDUSTRY=[
+{
+ id:'olts',title:'Oil Level & Temperature Sensor (RS485 OLTS)',ctx:'Thal Engineering',year:'2026',
+ tags:['Electrical Engineering','Power Distribution'],
+ grad:'linear-gradient(135deg,#334155,#1e3a8a)',
+ bg:'https://drive.google.com/file/d/1GiOK1rxNGf8xx5TqMpaaIY0BclXz0NSI/view?usp=sharing',                // <- background picture
+ summary:'A sensor that measures transformer oil level and temperature and sends the data to the energy meter via RS485.'
+},
+{
+ id:'apms',title:'APMS: Asset Protection and Management System',ctx:'Thal Engineering',year:'2026',
+ tags:['Electrical Engineering','Power Distribution'],
+ grad:'linear-gradient(135deg,#334155,#7c2d12)',
+ bg:'https://drive.google.com/file/d/1Sj1tAuA8Jj-6wjfHJ7vwnHlF2MBXyQOR/view?usp=sharing',
+ summary:'An Asset Protection and Management System for power distribution companies. It provides remote control, monitoring and load shedding of distribution transformers from the LT side, plus energy metering including active power, energy and phase-wise current and voltage. It can remotely trip the supply to homes based on low or high oil level, high temperature or power parameters. The system runs on 220 VAC and 5 VDC.'
+},
+{
+ id:'dcrc',title:'DCRC HT: Remote HT-Side Load Shedding',ctx:'Thal Engineering',year:'2026',
+ tags:['Electrical Engineering','Power Distribution'],
+ grad:'linear-gradient(135deg,#334155,#14532d)',
+ bg:'https://drive.google.com/file/d/1g_-urbDOzK4l8i51KbYQRAvI25YzbQhj/view?usp=sharing',
+ summary:'Remote load shedding on the HT side by controlling a load break switch, with tripping based on parameters such as door opening, oil level, temperature or battery failure. The system runs on 220 VAC and 24 VDC.'
+}
+];
+const SKILLS=['Electrical engineering','C / C++','Arduino & ESP32','FreeRTOS','Python','Flask','JavaScript / Blockly','MATLAB','Raspberry Pi','Few-shot learning','MobileNetV2 / YOLO','SolidWorks / CAD','ANSYS FEA','3D printing (PLA/PETG)','IoT / Blynk'];
+/* ===================== END OF THE PARTS YOU EDIT ===================== */
+
+const $=s=>document.querySelector(s);
+const SHOW=CONFIG.showEmptySlots;
+function embed(u){let m=u.match(/\/d\/([^/]+)/)||u.match(/[?&]id=([^&]+)/);
+ if(u.includes('drive.google.com')&&m)return`https://drive.google.com/file/d/${m[1]}/preview`;
+ m=u.match(/[?&]v=([^&]+)/)||u.match(/youtu\.be\/([^?]+)/);
+ return m?`https://www.youtube.com/embed/${m[1]}`:u}
+function img(u){if(!u)return'';const m=u.match(/drive\.google\.com.*\/d\/([^/?]+)/)||u.match(/drive\.google\.com.*[?&]id=([^&]+)/);
+ return m?`https://drive.google.com/thumbnail?id=${m[1]}&sz=w1600`:u}
+function vis(o,cls){return o.bg?`<div class="${cls}"><div class="bgb" style="background-image:url('${img(o.bg)}')"></div><img src="${img(o.bg)}" alt="${o.title}"></div>`:`<div class="${cls}" style="background-image:${o.grad}"></div>`}
+function bgStyle(o){return o.bg?`background-image:linear-gradient(rgba(5,9,26,.35),rgba(5,9,26,.55)),url('${img(o.bg)}')`:`background-image:${o.grad}`}
+function pics(arr,label){const a=(arr||[]).map((u,i)=>u?`<img src="${img(u)}" alt="${label} picture ${i+1}" loading="lazy">`:(SHOW?`<div class="slot">Add picture ${i+1}</div>`:'')).join('');
+ return a.trim()?`<h4>Pictures</h4><div class="gal">${a}</div>`:''}
+function num(m){return`<span class="n" data-to="${m.v}" data-d="${m.d}" data-u="${m.u}">0${m.u}</span>`}
+function counters(root){root.querySelectorAll('.n').forEach(e=>{const to=+e.dataset.to,d=+e.dataset.d,u=e.dataset.u,t0=performance.now();
+ (function f(t){const p=Math.min(1,(t-t0)/900);e.textContent=(to*(1-Math.pow(1-p,3))).toFixed(d)+u;if(p<1)requestAnimationFrame(f)})(t0)})}
+
+/* ===== profile, about, contact ===== */
+$('#profile').innerHTML=CONFIG.profile?`<img class="portrait" src="${img(CONFIG.profile)}" alt="Izn Siddiqui">`:(SHOW?`<div class="portrait slot">Add your photo</div>`:'');
+$('#atext').innerHTML=CONFIG.about.map(t=>`<p>${t}</p>`).join('');
+$('#agal').innerHTML=CONFIG.aboutPhotos.map((u,i)=>u?`<img src="${img(u)}" alt="Izn Siddiqui photo ${i+1}" loading="lazy">`:(SHOW?`<div class="slot">Add photo ${i+1}</div>`:'')).join('');
+$('#loc').textContent=CONFIG.location?`Based in ${CONFIG.location}`:'';
+const L=[['Email',CONFIG.email&&'mailto:'+CONFIG.email,CONFIG.email],['Call',CONFIG.phone&&'tel:'+CONFIG.phone.replace(/\s/g,''),CONFIG.phone],['LinkedIn',CONFIG.linkedin,'LinkedIn'],['GitHub',CONFIG.github,'GitHub'],['CV',CONFIG.cv,'Download CV']].filter(x=>x[1]);
+$('#links').innerHTML=L.map(([n,u,t])=>`<a class="btn ${n=='Email'?'p':''}" href="${u}" ${/^http/.test(u)?'target="_blank" rel="noopener"':''}>${t}</a>`).join('');
+$('#sk').innerHTML=SKILLS.map(s=>`<span>${s}</span>`).join('');
+$('#yr').textContent=new Date().getFullYear();
+
+/* ===== cards ===== */
+const cats=['All',...new Set(PROJECTS.flatMap(p=>p.tags))];let cur='All';
+function card(p,ind){return`<article class="card rv ${ind?'static':''}" ${ind?'':`data-id="${p.id}" tabindex="0"`}>
+ ${vis(p,'vis')}
+ <div class="in"><div class="meta">${p.ctx} · ${p.year}</div><h3>${p.title}</h3>${p.status?`<div class="status">${p.status}</div>`:''}
+ <div class="tags">${p.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+ <p>${ind?p.summary:p.summary}</p>
+ ${ind?`<div class="req">Industry work is available on request.</div>`:`<div class="mets">${p.mets.map(m=>`<div class="met"><b>${num(m)}</b><span>${m.l}</span></div>`).join('')}</div>`}</div></article>`}
+function render(){
+ $('#chips').innerHTML=cats.map(c=>`<button class="chip ${c==cur?'on':''}" data-c="${c}">${c}</button>`).join('');
+ $('#grid').innerHTML=PROJECTS.filter(p=>cur=='All'||p.tags.includes(cur)).map(p=>card(p,false)).join('');
+ $('#igrid').innerHTML=INDUSTRY.map(p=>card(p,true)).join('');
+ observe();
+}
+$('#chips').onclick=e=>{if(e.target.dataset.c){cur=e.target.dataset.c;render()}};
+function pick(e){const c=e.target.closest('.card');if(c)open(c.dataset.id)}
+$('#grid').onclick=pick;$('#grid').onkeydown=e=>{if(e.key=='Enter')pick(e)};
+
+function open(id){const d=$('#dlg'),p=PROJECTS.find(x=>x.id==id);
+ const head=`<div class="dh"><h3>${p.title}</h3><button class="x" aria-label="Close">&times;</button></div>`;
+ d.innerHTML=head+`<div class="db">${vis(p,'banner')}
+ <p class="disc">${p.ctx} · ${p.year}</p>
+ <p class="disc"><b>Disciplines:</b> ${p.disciplines.join(', ')}</p>
+ <h4>Problem</h4><p>${p.problem}</p>
+ <h4>My role</h4><p>${p.role}</p>
+ <h4>Key numbers</h4><div class="mets">${p.mets.map(m=>`<div class="met"><b>${num(m)}</b><span>${m.l}</span></div>`).join('')}</div>
+ ${p.video?`<h4>Demo</h4><iframe src="${embed(p.video)}" allow="autoplay;fullscreen" allowfullscreen loading="lazy"></iframe>`:''}
+ ${p.widget=='arm'?`<h4>Try the geometry</h4><div class="pg"><canvas id="arm" width="380" height="240"></canvas><div>
+   <label>Shoulder <span id="v1"></span></label><input id="s1" type="range" min="0" max="180" value="60">
+   <label>Elbow <span id="v2"></span></label><input id="s2" type="range" min="0" max="180" value="110">
+   <p id="ee" style="color:var(--a);font-size:15px"></p></div></div>`:''}
+ ${pics(p.pics,p.title)}
+ <h4>Highlights</h4><ul>${p.highlights.map(h=>`<li>${h}</li>`).join('')}</ul>
+ <h4>How it works <span style="text-transform:none;letter-spacing:0;color:var(--muted)">(click a step)</span></h4>
+ <div class="steps">${p.steps.map((s,i)=>`<button class="step ${i?'':'on'}" data-i="${i}">${i+1}. ${s[0]}</button>`).join('')}</div><div class="sd">${p.steps[0][1]}</div>
+ ${p.bars?`<h4>${p.barsTitle}</h4><div class="bars">${p.bars.map(b=>`<div>${b[0]} <span style="float:right">${b[1]}%</span><div class="bar"><i data-w="${b[1]}"></i></div></div>`).join('')}</div>`:''}
+ <h4>Good to know</h4><div class="note">${p.notes.join('<br><br>')}</div>
+ ${p.links.length?`<h4>Links</h4>${p.links.map(l=>`<a class="btn" href="${l[1]}" target="_blank" rel="noopener">${l[0]}</a>`).join('')}`:''}
+ </div>`;
+ d.showModal();counters(d);
+ setTimeout(()=>d.querySelectorAll('.bar i').forEach(i=>i.style.width=i.dataset.w+'%'),60);
+ d.querySelector('.x').onclick=()=>d.close();
+ d.querySelector('.steps').onclick=e=>{const b=e.target.closest('.step');if(!b)return;
+  d.querySelectorAll('.step').forEach(s=>s.classList.remove('on'));b.classList.add('on');d.querySelector('.sd').textContent=p.steps[b.dataset.i][1]};
+ if(p.widget=='arm')armWidget(d);
+}
+$('#dlg').addEventListener('click',e=>{if(e.target===e.currentTarget)e.currentTarget.close()});
+$('#dlg').addEventListener('close',()=>{$('#dlg').innerHTML=''});
+
+function armWidget(d){const c=d.querySelector('#arm'),x=c.getContext('2d'),s1=d.querySelector('#s1'),s2=d.querySelector('#s2'),S=12,ox=70,oy=210,L1=5,L2=9;
+ function draw(){const a=+s1.value,b=+s2.value;d.querySelector('#v1').textContent=a+'°';d.querySelector('#v2').textContent=b+'°';
+  const r=a*Math.PI/180,r2=(a+b-90)*Math.PI/180,x1=L1*Math.cos(r),y1=L1*Math.sin(r),x2=x1+L2*Math.cos(r2),y2=y1+L2*Math.sin(r2);
+  x.clearRect(0,0,380,240);x.strokeStyle='#25335f';x.setLineDash([4,4]);x.beginPath();x.arc(ox,oy,(L1+L2)*S,Math.PI,2*Math.PI);x.stroke();x.setLineDash([]);
+  x.beginPath();x.moveTo(10,oy);x.lineTo(370,oy);x.stroke();
+  const P=(u,v)=>[ox+u*S,oy-v*S];x.lineCap='round';x.lineWidth=8;x.strokeStyle='#f2c94c';x.beginPath();x.moveTo(ox,oy);x.lineTo(...P(x1,y1));x.stroke();
+  x.strokeStyle='#7fa8f0';x.beginPath();x.moveTo(...P(x1,y1));x.lineTo(...P(x2,y2));x.stroke();
+  [[0,0],[x1,y1],[x2,y2]].forEach(q=>{x.fillStyle='#eef1fa';x.beginPath();x.arc(...P(...q),5,0,7);x.fill()});
+  d.querySelector('#ee').textContent=`End point: ${x2.toFixed(1)} cm out, ${y2.toFixed(1)} cm up (max reach ${L1+L2} cm)`}
+ s1.oninput=s2.oninput=draw;draw()}
+
+/* ===== reveal on scroll ===== */
+let io;function observe(){io&&io.disconnect();io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');if(e.target.classList.contains('card'))counters(e.target);io.unobserve(e.target)}}),{threshold:.15});
+ document.querySelectorAll('.rv').forEach(n=>io.observe(n))}
+render();
+document.querySelectorAll('section .rv').forEach(n=>io.observe(n));
+
+/* ===== role rotator ===== */
+const W=['robots','embedded systems','IoT devices','power-distribution products','things that snap together'];let wi=0;
+setInterval(()=>{const e=$('#rot');e.style.opacity=0;setTimeout(()=>{wi=(wi+1)%W.length;e.textContent=W[wi];e.style.opacity=1},300)},2600);
+
+/* ===== hero: swirling night sky (original animation inspired by Van Gogh's "The Starry Night") ===== */
+(function(){
+ const c=$('#bg'),x=c.getContext('2d'),sc=$('#stars'),s=sc.getContext('2d'),hero=$('#hero');
+ const rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+ const cols=['#1d3c80','#2a54a8','#3d70cf','#6b97e6','#a9c8f2','#f2c94c','#e3b02a','#2f6a7a','#cfe0f7'];
+ let w,h,P=[],t=0,V,stars;
+ function mk(){return{x:Math.random()*w,y:Math.random()*h,life:80+Math.random()*160,age:0,c:cols[Math.random()*cols.length|0],lw:1.2+Math.random()*2.4}}
+ function size(){w=c.width=sc.width=hero.offsetWidth;h=c.height=sc.height=hero.offsetHeight;
+  x.fillStyle='#070c22';x.fillRect(0,0,w,h);
+  P=Array.from({length:Math.min(320,w*h/5500|0)},mk);
+  V=[{x:.62,y:.34,r:.2,k:1},{x:.34,y:.52,r:.14,k:-.8},{x:.82,y:.62,r:.12,k:.7}];
+  stars=[[.18,.2,1],[.44,.14,.9],[.7,.2,1.1],[.3,.38,.8],[.55,.48,1],[.84,.4,.9],[.12,.5,.7],[.9,.18,.8],[.5,.3,.7]]}
+ function step(){
+  x.fillStyle='rgba(7,12,34,.045)';x.fillRect(0,0,w,h);
+  const m=Math.min(w,h);
+  for(const p of P){
+   let vx=Math.sin(p.y*.012+t*.0006)*.7,vy=Math.cos(p.x*.009-t*.0005)*.7;
+   for(const v of V){const dx=p.x-v.x*w,dy=p.y-v.y*h,d=Math.hypot(dx,dy)+1,f=Math.exp(-d/(v.r*m))*3.2*v.k;vx+=-dy/d*f;vy+=dx/d*f}
+   const l=Math.hypot(vx,vy)||1,sp=1.7,nx=p.x+vx/l*sp*Math.min(l,2),ny=p.y+vy/l*sp*Math.min(l,2);
+   x.strokeStyle=p.c;x.globalAlpha=.55;x.lineWidth=p.lw;x.lineCap='round';x.beginPath();x.moveTo(p.x,p.y);x.lineTo(nx,ny);x.stroke();
+   p.x=nx;p.y=ny;p.age++;
+   if(p.age>p.life||p.x<-5||p.x>w+5||p.y<-5||p.y>h+5)Object.assign(p,mk())}
+  x.globalAlpha=1;t+=16}
+ function sky(){
+  s.clearRect(0,0,w,h);const m=Math.min(w,h);
+  stars.forEach((q,i)=>{const px=q[0]*w,py=q[1]*h,r=(m*.035)*q[2]*(1+.12*Math.sin(t*.002+i*1.7));
+   const g=s.createRadialGradient(px,py,0,px,py,r*3);g.addColorStop(0,'rgba(255,244,180,.95)');g.addColorStop(.25,'rgba(242,201,76,.55)');g.addColorStop(1,'rgba(242,201,76,0)');
+   s.fillStyle=g;s.beginPath();s.arc(px,py,r*3,0,7);s.fill();
+   for(let k=1;k<=3;k++){s.strokeStyle=`rgba(255,236,150,${.28/k*(.7+.3*Math.sin(t*.003+i+k))})`;s.lineWidth=1.5;s.beginPath();s.arc(px,py,r*(.9+k*.7),0,7);s.stroke()}
+   s.fillStyle='#fff6c8';s.beginPath();s.arc(px,py,r*.45,0,7);s.fill()});
+  // crescent moon
+  const mx=w*.9,my=h*.14,mr=m*.065;
+  let g=s.createRadialGradient(mx,my,mr*.5,mx,my,mr*2.6);g.addColorStop(0,'rgba(255,225,120,.5)');g.addColorStop(1,'rgba(255,225,120,0)');
+  s.fillStyle=g;s.beginPath();s.arc(mx,my,mr*2.6,0,7);s.fill();
+  s.fillStyle='#ffd95a';s.beginPath();s.arc(mx,my,mr,0,7);s.fill();
+  s.globalCompositeOperation='destination-out';s.beginPath();s.arc(mx+mr*.55,my-mr*.2,mr*.9,0,7);s.fill();s.globalCompositeOperation='source-over';
+  // hills and cypress silhouette
+  s.fillStyle='rgba(4,7,20,.96)';s.beginPath();s.moveTo(0,h);
+  for(let i=0;i<=w;i+=20)s.lineTo(i,h*.9+Math.sin(i*.006)*h*.03+Math.sin(i*.017)*h*.012);
+  s.lineTo(w,h);s.closePath();s.fill();
+  const cx=w*.1,cb=h*.93,ch=h*.5;s.beginPath();s.moveTo(cx-m*.03,cb);
+  s.bezierCurveTo(cx-m*.07,cb-ch*.4,cx-m*.01,cb-ch*.7,cx+Math.sin(t*.0012)*m*.01,cb-ch);
+  s.bezierCurveTo(cx+m*.05,cb-ch*.65,cx+m*.075,cb-ch*.35,cx+m*.03,cb);s.closePath();s.fill()}
+ function loop(){step();sky();requestAnimationFrame(loop)}
+ function start(){size();if(rm){for(let i=0;i<500;i++){step();t+=16}sky()}else loop()}
+ let ready=false;start();ready=true;
+ addEventListener('resize',()=>{if(!ready)return;size();if(rm){for(let i=0;i<500;i++){step();t+=16}sky()}})
+})();
+</script>
+</body>
+</html>
