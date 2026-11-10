@@ -215,7 +215,7 @@ const CONFIG={
   linkedin:'https://www.linkedin.com/in/izn-siddiqui/',        // <- paste your LinkedIn profile link between the quotes
   cv:'https://drive.google.com/file/d/1tiGHFibzqBjeiwxK-RuwP2Gay6kveQj9/view?usp=sharing',              // <- optional, e.g. 'assets/cv.pdf'
 
-  profile:'https://drive.google.com/file/d/1jxAmlbBFSeq1yvOE99rv5TOBHm5xZII9/view?usp=sharing',         // <- your main photo (shown in the top section), e.g. 'assets/me.jpg'
+  profile:'assets/IZN PFP-ZURICH.jpg',         // <- your main photo (shown in the top section)
 
   // About me: each line between quotes is one paragraph. Rewrite freely.
   about:[
@@ -223,7 +223,7 @@ const CONFIG={
     'Before that I built Build-IT, a robotics and ML education kit, as my final year project. I like owning the whole stack: circuits, firmware, mechanical design and software. Outside engineering, I enjoy football and music.'
   ],
   // 4 photos of yourself for the About section. Leave '' for an empty slot.
-  aboutPhotos:['assets/about-2.jpg','assets/about-3.jpg'],
+  aboutPhotos:['assets/portfolio pfp 2.jfif','assets/portfolio pfp 3.jfif'],
 
   // true  = empty picture slots show a dashed "Add picture" box (so you can see where they go)
   // false = empty slots are hidden. Set to false when you are done.
@@ -247,9 +247,9 @@ const PROJECTS=[
  tags:['Robotics','Embedded','ML','Mechanical'],
  disciplines:['Electrical Engineering','Embedded Systems','Mechanical Design','Machine Learning'],
  grad:'linear-gradient(135deg,#7f1d1d,#1e1b4b)',
- bg:'assets/build-it.jpg',
+ bg:'assets/Build-It.jpg',
  pics:[],
- video:'https://drive.google.com/file/d/1jkhFOH9wcy_ABq_y5szhCD6A644-CWnf/view?usp=sharing', // Paste the Dashboard Interface video URL here when available.
+ video:'assets/Build It.mp4', // plays locally from the assets folder
  videoLabel:'Dashboard Interface',
  summary:'A snap-together robotics kit with a block-coding web app and on-device few-shot object detection, built to make hands-on robotics and ML education affordable and locally available in Pakistan.',
  problem:'STEM kits are expensive and hard to source in Pakistan, and practical machine learning is almost absent from school-level robotics. Build-IT is a modular alternative aimed at students.',
@@ -270,7 +270,7 @@ const PROJECTS=[
   ['ML','YOLOv4-Tiny finds the object, MobileNetV2 turns the crop into a 1280-d vector, and cosine similarity against class prototypes names it.']],
  bars:[['Orange cup',100],['Pink cup',100],['Green block',60],['Tang pack',46.7]],barsTitle:'Per-class recall (75 test images, 4 objects)',
  notes:['Snap-fit pin safety factor: 1.2 is PLA yield strength (50 MPa) divided by peak stress (40.7 MPa); ANSYS itself reports a minimum safety factor of 2.11.','Overall on the test set: precision 95.2% (59/62), recall 78.7% (59/75), F1 0.86.','Estimated runtime of about 86 minutes comes from a component power table (about 41 W worst case), not a measured run.','Demonstrated in person to students at a national engineering robotics contest.'],
- doc:'assets/build-it-presentation.pdf',docLabel:'Presentation (PDF)',flowTitle:'From block code to robot',
+ doc:'assets/Build-It.pdf',docLabel:'Presentation (PDF)',flowTitle:'From block code to robot',
  flow:['Blockly web app','Flask compiler','Raspberry Pi 5','ESP32-S3','Motors + sensors + ML'],
  links:[['Source code on GitHub','https://github.com/iznsiddiqui/Build-It']]
 },
@@ -279,9 +279,9 @@ const PROJECTS=[
  tags:['Robotics','Embedded','IoT'],
  disciplines:['Electrical Engineering','Embedded Systems','Robotics & Kinematics'],
  grad:'linear-gradient(135deg,#0f766e,#1e293b)',
- bg:'assets/3dof-robot.jpg',
- pics:['assets/3dof-ui.png'],
- video:'https://drive.google.com/file/d/1ZfDNyShleqSVot1hS_fTqfa25xlKbjhg/view?usp=sharing',   // <- paste your Google Drive / YouTube video link here
+ bg:'assets/3 DOF Robot.jfif',
+ pics:['assets/dashboard.png'],
+ video:'assets/Demonstration of a 3 DOF- Robotic Arm.MOV',   // plays locally from the assets folder
  summary:'A low-cost servo arm controlled from any phone browser, paired with a MATLAB kinematic model of the same arm.',
  problem:'Prototype a functional arm of the kind used in packing and filling lines, using cheap parts, and keep a simulation that mirrors the hardware.',
  role:'Built the ESP32-S3 firmware and browser control app, and the MATLAB rigid-body-tree model. (Team project: my part is stated here; the report lists the full split.)',
@@ -298,7 +298,7 @@ const PROJECTS=[
   ['MATLAB twin','The same arm is modelled with DH parameters to visualise reach and joint limits.']],
  widget:'arm',
  notes:['The report describes the build qualitatively; no accuracy or repeatability figures were measured, so none are claimed here.','The playground above is a simple 2-link side view using the modelled 5 cm and 9 cm links. It is illustrative and not calibrated to the physical arm.'],
- doc:'assets/3dof-report.pdf',docLabel:'Report (PDF)',flowTitle:'Browser-to-servo control',
+ doc:'assets/3 DOF Robotic Arm- Report.pdf',docLabel:'Report (PDF)',flowTitle:'Browser-to-servo control',
  flow:['Phone browser','Wi-Fi access point','ESP32-S3','Servo motors','Arm movement'],
  repo:'', // Add the public repository URL here when ready.
  links:[]
@@ -308,7 +308,7 @@ const PROJECTS=[
  tags:['IoT','Embedded'],status:'Design and firmware',
  disciplines:['Electrical Engineering','Embedded Systems','IoT'],
  grad:'linear-gradient(135deg,#166534,#0f172a)',
- bg:'assets/hydroponics.jpg',
+ bg:'assets/Hydroponics.jfif',
  pics:[],
  video:'',
  summary:'An ESP32 monitoring and control design for a nutrient-film hydroponic lettuce system, with a Blynk dashboard, safety interlocks and local control that keeps working when Wi-Fi drops.',
@@ -327,7 +327,7 @@ const PROJECTS=[
   ['Act','Five relays drive circulation, air, light, fan and refill.'],
   ['Report','Telemetry and alerts go to the Blynk dashboard.']],
  notes:['This is a design and firmware project completed during a 2023 internship; the documentation was written up for this portfolio. The full-size growing structure was not built, and sensor values would need calibration before use.','Sample dashboards in the write-up show illustrative values, not measured data.'],
- doc:'assets/hydroponics-report.pdf',docLabel:'Report (PDF)',flowTitle:'Sense, decide and actuate',
+ doc:'assets/IoT-based Hydroponics System.pdf',docLabel:'Report (PDF)',flowTitle:'Sense, decide and actuate',
  flow:['Sensors','ESP32 control','Safety interlocks','5 relays','Blynk dashboard'],
  repo:'', // Add the public repository URL here when ready.
  links:[]
@@ -339,7 +339,7 @@ const INDUSTRY=[
 {
  id:'olts',title:'Oil Level & Temperature Sensor (RS485 OLTS)',ctx:'Thal Engineering',year:'2026',status:'In service: 50+ devices',
  tags:['Embedded','Power Distribution'],specs:['STM32','RS485','220 VAC / 5 VDC','IP54'],
- grad:'linear-gradient(135deg,#334155,#1e3a8a)',bg:'assets/olts.jpg',
+ grad:'linear-gradient(135deg,#334155,#1e3a8a)',bg:'assets/RS485.jpg',
  summary:'A sensor that measures transformer oil level and temperature and sends the data to the energy meter over RS485, built for long-distance communication.',
  role:'Firmware and circuit design.',stack:'STM32 microcontroller, RS485 long-distance communication, powered from 220 VAC or 5 VDC.',
  mets:[{v:50,d:0,u:'+',l:'Devices deployed in the field'},{v:54,d:0,u:'',l:'IP rating (IP54)'}],
@@ -349,7 +349,7 @@ const INDUSTRY=[
 {
  id:'apms',title:'APMS: Asset Protection and Management System',ctx:'Thal Engineering',year:'2026',status:'Field trial: 5 units deployed',
  tags:['Embedded','Power Distribution'],specs:['STM32','GSM','220 VAC / 5 VDC','25-200 kVA'],
- grad:'linear-gradient(135deg,#334155,#7c2d12)',bg:'assets/apms.png',
+ grad:'linear-gradient(135deg,#334155,#7c2d12)',bg:'assets/APMS.png',
  summary:'A system for power distribution companies that provides remote control, monitoring and load shedding of distribution transformers from the LT side, plus energy metering including active power, energy and phase-wise current and voltage. It can trip the supply on low or high oil level, high temperature or power parameters, and it trips instantly even without GSM communication.',
  role:'Firmware and circuit design, control wiring and enclosure design.',stack:'STM32 microcontroller with GSM communication; local trip logic that works without GSM.',
  mets:[{v:5,d:0,u:' s',l:'Response time'},{v:5,d:0,u:'',l:'Units deployed in the field'},{v:200,d:0,u:' kVA',l:'Largest transformer size supported'}],
@@ -359,7 +359,7 @@ const INDUSTRY=[
 {
  id:'dcrc',title:'DCRC HT: Remote HT-Side Load Shedding',ctx:'Thal Engineering',year:'2026',status:'Field trial, pilot order',
  tags:['Embedded','Power Distribution'],specs:['STM32','GSM','220 VAC / 24 VDC','11 kV switch'],
- grad:'linear-gradient(135deg,#334155,#14532d)',bg:'assets/dcrc.jpg',
+ grad:'linear-gradient(135deg,#334155,#14532d)',bg:'assets/Dcrc.jpg',
  summary:'Remote load shedding on the HT side by controlling an ABB load break switch on 11 kV lines, with tripping based on parameters such as door opening, oil level, temperature or battery failure. Scheduled load shedding runs 4 times a day independent of GSM.',
  role:'Firmware and circuit design, testing, control wiring, and enclosure design and development.',stack:'STM32 microcontroller with GSM communication; controls an ABB load break switch.',
  mets:[{v:5,d:0,u:' s',l:'Response after fault detection'},{v:4,d:0,u:'',l:'Load-shedding cycles per day, without GSM'},{v:11,d:0,u:' kV',l:'Switched by the load break switch'}],
@@ -376,13 +376,14 @@ function embed(u){let m=u.match(/\/d\/([^/]+)/)||u.match(/[?&]id=([^&]+)/);
  if(u.includes('drive.google.com')&&m)return`https://drive.google.com/file/d/${m[1]}/preview`;
  m=u.match(/[?&]v=([^&]+)/)||u.match(/youtu\.be\/([^?]+)/);
  return m?`https://www.youtube.com/embed/${m[1]}`:u}
+function loc(u){return /^(https?:|mailto:|tel:|data:|#)/.test(u)?u:encodeURI(u)}
 function img(u){if(!u)return'';const m=u.match(/drive\.google\.com.*\/d\/([^/?]+)/)||u.match(/drive\.google\.com.*[?&]id=([^&]+)/);
- return m?`https://drive.google.com/thumbnail?id=${m[1]}&sz=w1600`:u}
+ return m?`https://drive.google.com/thumbnail?id=${m[1]}&sz=w1600`:loc(u)}
 function vis(o,cls){return `<div class="${cls}" style="background-image:${o.grad}">${o.bg?`<div class="bgb" style="background-image:url('${img(o.bg)}')"></div><img src="${img(o.bg)}" alt="${o.title}" referrerpolicy="no-referrer" onerror="this.previousElementSibling.style.display='none';this.style.display='none'">`:''}</div>`}
-function vid(u,t){return /\.(mp4|mov|webm)$/i.test(u)?`<video controls preload="metadata" src="${u}" title="${t}"></video>`:`<iframe src="${embed(u)}" allow="autoplay;fullscreen" allowfullscreen loading="lazy" title="${t}"></iframe>`}
+function vid(u,t){return /\.(mp4|mov|webm)$/i.test(u)?`<video controls playsinline preload="metadata" src="${loc(u)}" title="${t}"></video>`:`<iframe src="${embed(u)}" allow="autoplay;fullscreen" allowfullscreen loading="lazy" title="${t}"></iframe>`}
 function proofHTML(p){const src=p.repo||(p.links&&p.links[0]?p.links[0][1]:'');
  const it=[['Source code',src],[p.docLabel||'Report',p.doc||''],['Video',p.video||''],['Photos',((p.pics&&p.pics.length)||p.bg)?'#':''],['Measured data',p.bars?'#':'']];
- return `<h4>Proof</h4><div class="proof">${it.map(([k,u])=>u?(u==='#'?`<span class="pf ok">&#10003; ${k}</span>`:`<a class="pf ok" href="${u}" target="_blank" rel="noopener">&#10003; ${k}</a>`):`<span class="pf no">${k}: not public</span>`).join('')}</div>`}
+ return `<h4>Proof</h4><div class="proof">${it.map(([k,u])=>u?(u==='#'?`<span class="pf ok">&#10003; ${k}</span>`:`<a class="pf ok" href="${loc(u)}" target="_blank" rel="noopener">&#10003; ${k}</a>`):`<span class="pf no">${k}: not public</span>`).join('')}</div>`}
 function bgStyle(o){return o.bg?`background-image:linear-gradient(rgba(5,9,26,.35),rgba(5,9,26,.55)),url('${img(o.bg)}')`:`background-image:${o.grad}`}
 function pics(arr,label){const valid=(arr||[]).filter(Boolean);if(!valid.length)return'';
  const a=valid.map((u,i)=>`<img src="${img(u)}" alt="${label} picture ${i+1}" loading="lazy">`).join('');
