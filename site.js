@@ -108,7 +108,7 @@ if ("IntersectionObserver" in window) {
     (entries, observer) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
+          entry.target.classList.add("in");
           observer.unobserve(entry.target);
         }
       });
@@ -123,7 +123,7 @@ if ("IntersectionObserver" in window) {
   });
 } else {
   revealElements.forEach((element) => {
-    element.classList.add("visible");
+    element.classList.add("in");
   });
 }
 
