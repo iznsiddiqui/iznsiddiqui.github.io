@@ -1,172 +1,112 @@
-const CONFIG = {
-  phone: "+923001234567",
-  whatsapp: "923001234567",
-  email: "your.email@example.com"
-};
 
-// Theme handling
-const themeBtn = document.getElementById("themeBtn");
-const root = document.documentElement;
+/* Shared: config, theme switch (sunrise/sunset), call + WhatsApp popup, reveal on scroll */
+const CONFIG={email:'iznsiddiqui03@gmail.com',phone:'+92 336 6846708',wa:'923366846708',showEmptySlots:false};
+const $=s=>document.querySelector(s);
+const SHOW=CONFIG.showEmptySlots;
 
-function apply(theme) {
-  root.setAttribute("data-theme", theme);
-  localStorage.setItem("theme", theme);
+function loc(u){return /^(https?:|mailto:|tel:|data:|#)/.test(u)?u:encodeURI(u)}
 
-  if (themeBtn) {
-    themeBtn.textContent = theme === "light" ? "☀" : "☾";
-    themeBtn.setAttribute(
-      "aria-label",
-      theme === "light" ? "Switch to dark theme" : "Switch to light theme"
-    );
-    themeBtn.title = theme === "light"
-      ? "Switch to dark theme"
-      : "Switch to light theme";
-  }
-
-  const themeMeta = document.querySelector('meta[name="theme-color"]');
-  if (themeMeta) {
-    themeMeta.setAttribute(
-      "content",
-      theme === "light" ? "#e8e5df" : "#111820"
-    );
-  }
+function img(u){
+  if(!u)return'';
+  const m=u.match(/drive\.google\.com.*\/d\/([^/?]+)/)||u.match(/drive\.google\.com.*[?&]id=([^&]+)/);
+  return m?`https://drive.google.com/thumbnail?id=${m[1]}&sz=w1600`:loc(u)
 }
 
-const savedTheme = localStorage.getItem("theme");
-apply(savedTheme || root.getAttribute("data-theme") || "light");
-
-if (themeBtn) {
-  themeBtn.addEventListener("click", () => {
-    const currentTheme = root.getAttribute("data-theme");
-    apply(currentTheme === "light" ? "dark" : "light");
-  });
+function counters(root){
+  root.querySelectorAll('.n').forEach(e=>{
+    const to=+e.dataset.to,d=+e.dataset.d,u=e.dataset.u,t0=performance.now();
+    (function f(t){
+      const p=Math.min(1,(t-t0)/900);
+      e.textContent=(to*(1-Math.pow(1-p,3))).toFixed(d)+u;
+      if(p<1)requestAnimationFrame(f)
+    })(t0)
+  })
 }
 
-// Phone / WhatsApp popup
-const phoneDlg = document.createElement("dialog");
-phoneDlg.id = "phoneDlg";
-phoneDlg.className = "mini";
-
-phoneDlg.innerHTML = `
-  <div class="dlg-inner">
-    <button class="dlg-close" type="button" aria-label="Close">&times;</button>
-    <h3>Get in touch</h3>
-    <p>Choose how you'd like to contact me.</p>
-    <div class="dlg-actions">
-      <a class="btn primary" href="tel:${CONFIG.phone}">Call</a>
-      <a class="btn secondary" href="https://wa.me/${CONFIG.whatsapp}" target="_blank" rel="noopener">WhatsApp</a>
-    </div>
-  </div>
-`;
-
-document.body.appendChild(phoneDlg);
-
-const closeDlg = phoneDlg.querySelector(".dlg-close");
-
-if (closeDlg) {
-  closeDlg.addEventListener("click", () => phoneDlg.close());
-}
-
-phoneDlg.addEventListener("click", (event) => {
-  if (event.target === phoneDlg) {
-    phoneDlg.close();
-  }
-});
-
-document.querySelectorAll("[data-phone]").forEach((button) => {
-  button.addEventListener("click", (event) => {
-    event.preventDefault();
-    phoneDlg.showModal();
-  });
-});
-
-// Role rotator
-const roles = [
-  "Embedded Systems Engineer",
-  "Mechatronics Engineer",
-  "Hardware & Firmware Developer"
-];
-
-const roleElement = document.querySelector(".role-text");
-
-if (roleElement && roles.length > 0) {
-  let roleIndex = 0;
-
-  roleElement.textContent = roles[roleIndex];
-
-  setInterval(() => {
-    roleIndex = (roleIndex + 1) % roles.length;
-    roleElement.textContent = roles[roleIndex];
-  }, 2500);
-}
-
-// Scroll reveal
-const revealElements = document.querySelectorAll(".rv");
-
-if ("IntersectionObserver" in window) {
-  const revealObserver = new IntersectionObserver(
-    (entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("in");
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    {
-      threshold: 0.12
+let io;
+function observe(){
+  io&&io.disconnect();
+  io=new IntersectionObserver(es=>es.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('in');
+      if(e.target.classList.contains('card'))counters(e.target);
+      io.unobserve(e.target)
     }
-  );
-
-  revealElements.forEach((element) => {
-    revealObserver.observe(element);
-  });
-} else {
-  revealElements.forEach((element) => {
-    element.classList.add("in");
-  });
+  }),{threshold:.15});
+  document.querySelectorAll('.rv').forEach(n=>io.observe(n))
 }
 
-// Animated counters
-const counters = document.querySelectorAll("[data-count]");
+/* Light = sunrise; dark = sunset. CSS owns the scene and popup palette. */
+(function(){
+  const root=document.documentElement,btn=$('#themeBtn'),meta=document.querySelector('meta[name="theme-color"]');
 
-if ("IntersectionObserver" in window && counters.length > 0) {
-  const counterObserver = new IntersectionObserver(
-    (entries, observer) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-
-        const counter = entry.target;
-        const target = Number(counter.getAttribute("data-count")) || 0;
-        const duration = 1500;
-        const startTime = performance.now();
-
-        function updateCounter(currentTime) {
-          const progress = Math.min(
-            (currentTime - startTime) / duration,
-            1
-          );
-
-          const easedProgress = 1 - Math.pow(1 - progress, 3);
-          counter.textContent = Math.round(target * easedProgress);
-
-          if (progress < 1) {
-            requestAnimationFrame(updateCounter);
-          } else {
-            counter.textContent = target;
-          }
-        }
-
-        requestAnimationFrame(updateCounter);
-        observer.unobserve(counter);
-      });
-    },
-    {
-      threshold: 0.5
+  function apply(theme){
+    const dark=theme==='dark';
+    root.setAttribute('data-theme',dark?'dark':'light');
+    if(meta)meta.setAttribute('content',dark?'#0b1220':'#f2eee7');
+    if(btn){
+      btn.setAttribute('aria-label',dark?'Switch to sunrise':'Switch to sunset');
+      btn.title=dark?'Switch to sunrise':'Switch to sunset';
     }
-  );
+  }
 
-  counters.forEach((counter) => {
-    counterObserver.observe(counter);
+  let initial=root.getAttribute('data-theme')==='dark'?'dark':'light';
+  try{
+    const saved=localStorage.getItem('theme');
+    if(saved==='dark'||saved==='light')initial=saved;
+  }catch(e){}
+
+  apply(initial);
+
+  if(btn)btn.addEventListener('click',()=>{
+    const next=root.getAttribute('data-theme')==='dark'?'light':'dark';
+    apply(next);
+    try{localStorage.setItem('theme',next)}catch(e){}
   });
-}
+})();
+
+/* Call / WhatsApp popup: any element with data-phone opens it */
+(function(){
+  const tel='tel:'+CONFIG.phone.replace(/\s/g,'');
+  const d=document.createElement('dialog');
+  d.id='phoneDlg';
+  d.className='mini';
+
+  d.innerHTML=`<div class="dh"><h3>Get in touch</h3><button class="x" aria-label="Close">&times;</button></div>
+  <div class="db"><p class="pnum">${CONFIG.phone}</p>
+  <a class="btn p big" href="${tel}">Call</a>
+  <a class="btn big wa" href="https://wa.me/${CONFIG.wa}" target="_blank" rel="noopener">WhatsApp</a></div>`;
+
+  document.body.appendChild(d);
+  d.querySelector('.x').onclick=()=>d.close();
+  d.addEventListener('click',e=>{if(e.target===d)d.close()});
+
+  document.addEventListener('click',e=>{
+    const t=e.target.closest('[data-phone]');
+    if(t){
+      e.preventDefault();
+      d.showModal()
+    }
+  });
+})();
+
+/* Role rotator (home page) */
+(function(){
+  const e=$('#rot');
+  if(!e)return;
+  const W=['power-distribution monitoring systems','embedded firmware','industrial IoT devices','transformer protection and control','robots that snap together'];
+  let wi=0;
+  setInterval(()=>{
+    e.style.opacity=0;
+    setTimeout(()=>{
+      wi=(wi+1)%W.length;
+      e.textContent=W[wi];
+      e.style.opacity=1
+    },300)
+  },2600)
+})();
+
+const yr=$('#yr');
+if(yr)yr.textContent=new Date().getFullYear();
+
+observe();
