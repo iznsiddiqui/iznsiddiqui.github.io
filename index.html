@@ -14,11 +14,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Izn Siddiqui | Electrical Engineering, Embedded Systems & Robotics</title>
-<meta name="description" content="Portfolio of Izn Siddiqui, electrical engineer from NUST based in Karachi, Pakistan: embedded systems, robotics, IoT and power distribution.">
+<title>Izn Siddiqui | Power Monitoring &amp; Industrial IoT Engineer</title>
+<meta name="description" content="Mechatronics engineer (NUST), Karachi. Embedded monitoring and control products for power distribution: STM32 firmware, RS485, GSM, field-deployed at Thal Engineering.">
+<link rel="canonical" href="https://iznsiddiqui.github.io/">
+<meta name="theme-color" content="#0a1230">
+<meta property="og:type" content="website"><meta property="og:title" content="Izn Siddiqui | Power Monitoring & Industrial IoT Engineer">
+<meta property="og:description" content="Embedded monitoring and control products for power distribution, from bench to field deployment.">
+<meta property="og:url" content="https://iznsiddiqui.github.io/"><meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a1230'/%3E%3Ctext x='32' y='43' font-size='30' text-anchor='middle' fill='%23f2c94c' font-family='Georgia'%3EIS%3C/text%3E%3C/svg%3E">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Izn Siddiqui","jobTitle":"Embedded systems and industrial IoT engineer","worksFor":{"@type":"Organization","name":"Thal Engineering"},"alumniOf":"NUST","address":"Karachi, Pakistan","url":"https://iznsiddiqui.github.io/","sameAs":["https://github.com/iznsiddiqui","https://www.linkedin.com/in/izn-siddiqui/"]}</script>
 <style>
 :root{--bg:#0a1230;--panel:#101a3a;--panel2:#17234a;--text:#eef1fa;--muted:#a3afcf;--a:#f2c94c;--b:#7fa8f0;--line:#25335f;--r:16px}
-*{box-sizing:border-box}html{scroll-behavior:smooth}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:72px}
 body{margin:0;background:var(--bg);color:var(--text);font:17px/1.65 Cambria,"Cambria Math",Georgia,serif}
 button,input,canvas,dialog{font-family:inherit}
 a{color:var(--a);text-decoration:none}a:hover{text-decoration:underline}
@@ -26,7 +33,7 @@ a{color:var(--a);text-decoration:none}a:hover{text-decoration:underline}
 nav{position:fixed;inset:0 0 auto 0;z-index:20;backdrop-filter:blur(10px);background:rgba(8,12,30,.65);border-bottom:1px solid var(--line)}
 nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px}
 nav b{letter-spacing:.5px}nav div a{margin-left:22px;color:var(--muted);font-size:15px}nav div a:hover{color:var(--text);text-decoration:none}
-#hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;background:#070c22}
+#hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;overflow:hidden;background:#070c22}
 #hero canvas{position:absolute;inset:0;width:100%;height:100%}
 #hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,10,28,.72),rgba(6,10,28,.18) 70%)}
 #hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;width:100%}
@@ -127,35 +134,52 @@ iframe{width:100%;aspect-ratio:16/9;border:0;border-radius:12px;background:#000}
 .dialog-content{max-height:calc(90vh - 65px);overflow-y:auto}
 footer{padding:40px 0;color:var(--muted);text-align:center;font-size:15px;border-top:1px solid var(--line)}
 .rv{opacity:0;transform:translateY(24px);transition:.7s}.rv.in{opacity:1;transform:none}
-@media(max-width:720px){.pg,.about{grid-template-columns:1fr}.bcb{grid-template-columns:1fr}.bc-side{min-width:0}#hero .wrap{grid-template-columns:1fr}.portrait{order:-1;width:140px}nav div a:nth-child(n+3){display:none}}
+@media(max-width:720px){.pg,.about{grid-template-columns:1fr}.bcb{grid-template-columns:1fr}.bc-side{min-width:0}#hero .wrap{grid-template-columns:1fr}.portrait{order:-1;width:140px}nav div a{margin-left:12px;font-size:13px}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto}.rv{opacity:1;transform:none}}
+a:focus-visible,button:focus-visible,.card:focus-visible{outline:2px solid var(--a);outline-offset:3px}
+body:has(dialog[open]){overflow:hidden}
+video{width:100%;aspect-ratio:16/9;border-radius:12px;background:#000}
+.herosub{color:#c9d3ee;margin:-14px 0 24px;max-width:560px}
+.glance{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.glance div{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px}
+.glance b{display:block;font-size:30px;color:var(--a)}.glance span{font-size:14px;color:var(--muted)}
+.proof{display:flex;flex-wrap:wrap;gap:8px}.pf{font-size:14px;padding:5px 12px;border-radius:999px;border:1px solid var(--line)}
+.pf.ok{color:#bfe7c8;border-color:#2d6a4a;background:rgba(45,106,74,.18)}.pf.no{color:var(--muted);border-style:dashed}
+a.pf:hover{text-decoration:none;border-color:var(--a)}
+.tag.sp{color:#9fc2ff;background:rgba(127,168,240,.1)}
 </style>
 </head>
 <body>
-<nav><div class="wrap"><b>IS</b><div><a href="#projects">Projects</a><a href="#industry">Industry</a><a href="#about">About</a><a href="#contact">Contact</a></div></div></nav>
+<nav><div class="wrap"><b>IS</b><div><a href="#industry">Industry</a><a href="#projects">Projects</a><a href="#about">About</a><a href="#contact">Contact</a><a id="navcv" href="#contact">CV</a></div></div></nav>
 
 <header id="hero"><canvas id="bg"></canvas><canvas id="stars"></canvas>
 <div class="wrap">
  <div>
-  <div class="kicker">Portfolio</div>
+  <div class="kicker">Embedded systems · Industrial IoT · Power distribution</div>
   <h1>Izn <span>Siddiqui</span></h1>
-  <div class="role">I build <em id="rot">robots</em></div>
-  <a class="btn p" href="#projects">See my projects</a><a class="btn" href="#contact">Contact me</a>
+  <div class="role">I build <em id="rot">power-distribution monitoring systems</em></div>
+  <p class="herosub">Embedded and IoT engineer at Thal Engineering, Karachi · Mechatronics, NUST</p>
+  <a class="btn p" href="#industry">Industry work</a><a class="btn" id="herocv" href="#contact">Download CV</a><a class="btn" href="#projects">Projects</a><a class="btn" href="#contact">Contact</a>
  </div>
  <div id="profile"></div>
 </div></header>
+<section id="glance" style="padding:46px 0 0"><div class="wrap"><div class="glance rv">
+<div><b>50+</b><span>devices in service in the field (RS485 oil level and temperature sensor)</span></div>
+<div><b>5 s</b><span>trip response after fault detection (transformer protection units)</span></div>
+<div><b>95.2%</b><span>detection precision on 75 test images (final year project)</span></div>
+</div></div></section>
+
+<section id="industry"><div class="wrap">
+<h2 class="rv">Industry work: Thal Engineering</h2>
+<p class="sub rv">Monitoring and control products for power distribution, designed at Thal Engineering. Click a card for the specifics.</p>
+<div class="grid" id="igrid"></div>
+</div></section>
 
 <section id="projects"><div class="wrap">
 <h2 class="rv">Selected projects</h2>
 <p class="sub rv">Click a card for the details, the numbers and an honest note on what is and is not verified.</p>
 <div class="chips rv" id="chips"></div>
 <div class="grid" id="grid"></div>
-</div></section>
-
-<section id="industry"><div class="wrap">
-<h2 class="rv">Industry work: Thal Engineering</h2>
-<p class="sub rv">Power-distribution monitoring and control products. Details are shared on request.</p>
-<div class="grid" id="igrid"></div>
 </div></section>
 
 <section id="skills"><div class="wrap">
@@ -170,12 +194,13 @@ footer{padding:40px 0;color:var(--muted);text-align:center;font-size:15px;border
 
 <section id="contact"><div class="wrap">
 <h2 class="rv">Get in touch</h2>
-<p class="sub rv">Open to master's programs and engineering roles in electrical engineering, embedded systems, robotics and applied ML.</p>
+<p class="sub rv">Open to master's programs in power systems and embedded/IoT, and to engineering roles in power-distribution monitoring and industrial IoT.</p>
 <p class="ct rv" id="loc"></p>
 <div class="rv" id="links"></div>
 </div></section>
 <footer>© <span id="yr"></span> Izn Siddiqui</footer>
 
+<noscript><div style="max-width:760px;margin:0 auto;padding:40px 20px;color:#eef1fa"><h2>Izn Siddiqui</h2><p>Mechatronics engineer (NUST), Karachi. Embedded and IoT engineer at Thal Engineering: monitoring and control products for power distribution (STM32, RS485, GSM).</p><ul><li>RS485 oil level and temperature sensor: 50+ devices in service; passed IEC 61000 EMC and high-voltage tests, certified by PPMC.</li><li>APMS: transformer load monitoring and control, 5 s trip response, 5 units in field trial.</li><li>DCRC HT: remote load shedding of an 11 kV load break switch, field trial.</li><li>Build-IT: modular robotics and ML education kit (final year project).</li></ul><p>Contact: iznsiddiqui03@gmail.com · github.com/iznsiddiqui</p></div></noscript>
 <dialog id="dlg"></dialog>
 
 <script>
@@ -194,15 +219,15 @@ const CONFIG={
 
   // About me: each line between quotes is one paragraph. Rewrite freely.
   about:[
-    'I am a mechatronics engineer from NUST, based in Karachi, Pakistan. I enjoy projects where I can own the whole stack: circuits, firmware, mechanical design and software. Outside engineering, I enjoy football and music.',
-    'My work spans a student robotics and ML education kit, IoT systems, and industrial monitoring and control products for power distribution. I also enjoy travelling and would ideally like to retire in the mountains :)'
+    'I am a mechatronics engineer from NUST, based in Karachi, Pakistan. At Thal Engineering I design embedded monitoring and control products for power distribution: STM32 firmware, circuit design, control wiring and enclosures, from the bench to field trials and sales.',
+    'Before that I built Build-IT, a robotics and ML education kit, as my final year project. I like owning the whole stack: circuits, firmware, mechanical design and software. Outside engineering, I enjoy football and music.'
   ],
   // 4 photos of yourself for the About section. Leave '' for an empty slot.
-  aboutPhotos:['','https://drive.google.com/file/d/1-by_vdghPc3YSEgY36CihmkeF6UJBXYD/view?usp=sharing','https://drive.google.com/file/d/13AcF7rDeThoUgnDF9BYsHwFL4hmdzAUF/view?usp=sharing',''],
+  aboutPhotos:['assets/about-2.jpg','assets/about-3.jpg'],
 
   // true  = empty picture slots show a dashed "Add picture" box (so you can see where they go)
   // false = empty slots are hidden. Set to false when you are done.
-  showEmptySlots:true
+  showEmptySlots:false
 };
 
 /* Picture / video links can be written in 3 ways:
@@ -218,11 +243,11 @@ const CONFIG={
    ===================================================================== */
 const PROJECTS=[
 {
- id:'buildit',title:'Build-IT: Modular Robotics Kit for STEM Education',year:'2024-25',ctx:'NUST Final Year Project',
+ id:'buildit',title:'Build-IT: Modular Robotics Kit for STEM Education',year:'2024-25',ctx:'NUST Final Year Project',status:'Working prototype',
  tags:['Robotics','Embedded','ML','Mechanical'],
  disciplines:['Electrical Engineering','Embedded Systems','Mechanical Design','Machine Learning'],
  grad:'linear-gradient(135deg,#7f1d1d,#1e1b4b)',
- bg:'https://drive.google.com/file/d/10XUOO2bJVVjfx0JPNBBZHrPf8CP8heZ1/view?usp=sharing',
+ bg:'assets/build-it.jpg',
  pics:[],
  video:'https://drive.google.com/file/d/1jkhFOH9wcy_ABq_y5szhCD6A644-CWnf/view?usp=sharing', // Paste the Dashboard Interface video URL here when available.
  videoLabel:'Dashboard Interface',
@@ -231,10 +256,10 @@ const PROJECTS=[
  role:'Designed and built the project end to end: mechanical design (3D-printed modules, snap-fit pin, gripper), embedded firmware, the Blockly web app and backend, and the ML pipeline.',
  mets:[{v:59.2,d:1,u:' Wh',l:'4S Li-ion pack'},{v:1.2,d:1,u:'',l:'FEA safety factor, snap-fit pin'},{v:95.2,d:1,u:'%',l:'Detection precision'}],
  highlights:[
-  'Modular PLA building blocks with a custom snap-fit pin, refined through several iterations (press-fit, rotational, magnetic) and validated in ANSYS.',
+  'Modular PLA building blocks with a custom snap-fit pin, refined through several iterations (press-fit, rotational, magnetic) and analysed in ANSYS FEA.',
   'Power Brick enclosure (129 x 125 x 110 mm, 70 connecting slots) housing a Raspberry Pi 5, ESP32-S3, battery and buck converters.',
   'Sensor and motor blocks (IR, ultrasonic, colour) plus a 2-DOF gripper, all on RJ45 connectors for child-friendly, repeatable plug-in wiring.',
-  'Replaced a ROS 2 setup with a lightweight framework after measuring latency in sensor reads; the ESP32-S3 runs low-level control as embedded firmware.',
+  'Replaced a ROS 2 setup with a lightweight framework because ROS 2 on the Pi added latency to sensor reads (observed, not benchmarked); the ESP32-S3 now runs low-level control as embedded firmware.',
   'Custom C++ library with FreeRTOS tasks that poll IR and ultrasonic sensors in the background and return a stable 5-sample rolling average.',
   'Few-shot object detection: 5 photos per object, no large dataset needed.'],
  steps:[
@@ -244,22 +269,22 @@ const PROJECTS=[
   ['Run','The ESP32 drives motors and sensors in real time and signals the Pi over GPIO when a camera capture or ML inference is needed.'],
   ['ML','YOLOv4-Tiny finds the object, MobileNetV2 turns the crop into a 1280-d vector, and cosine similarity against class prototypes names it.']],
  bars:[['Orange cup',100],['Pink cup',100],['Green block',60],['Tang pack',46.7]],barsTitle:'Per-class recall (75 test images, 4 objects)',
- notes:['Overall on the test set: precision 95.2% (59/62), recall 78.7% (59/75), F1 0.86.','Estimated runtime of about 86 minutes comes from a component power table (about 41 W worst case), not a measured run.','Demonstrated in person to students at a national engineering robotics contest.'],
- flowTitle:'From block code to robot',
+ notes:['Snap-fit pin safety factor: 1.2 is PLA yield strength (50 MPa) divided by peak stress (40.7 MPa); ANSYS itself reports a minimum safety factor of 2.11.','Overall on the test set: precision 95.2% (59/62), recall 78.7% (59/75), F1 0.86.','Estimated runtime of about 86 minutes comes from a component power table (about 41 W worst case), not a measured run.','Demonstrated in person to students at a national engineering robotics contest.'],
+ doc:'assets/build-it-presentation.pdf',docLabel:'Presentation (PDF)',flowTitle:'From block code to robot',
  flow:['Blockly web app','Flask compiler','Raspberry Pi 5','ESP32-S3','Motors + sensors + ML'],
  links:[['Source code on GitHub','https://github.com/iznsiddiqui/Build-It']]
 },
 {
- id:'arm',title:'3-DOF Robotic Arm with Wi-Fi Control',year:'2025',ctx:'NUST coursework project',
+ id:'arm',title:'3-DOF Robotic Arm with Wi-Fi Control',year:'2025',ctx:'NUST coursework project',status:'Working prototype',
  tags:['Robotics','Embedded','IoT'],
  disciplines:['Electrical Engineering','Embedded Systems','Robotics & Kinematics'],
  grad:'linear-gradient(135deg,#0f766e,#1e293b)',
- bg:'https://drive.google.com/file/d/1OuaNCapJcTdjghCXAXO0Rqlo_ZZaIPKX/view?usp=sharing',
- pics:['https://drive.google.com/file/d/16svb2YD22HkOM_n3j9FShxT6G2QSEYlJ/view?usp=sharing'],
+ bg:'assets/3dof-robot.jpg',
+ pics:['assets/3dof-ui.png'],
  video:'https://drive.google.com/file/d/1ZfDNyShleqSVot1hS_fTqfa25xlKbjhg/view?usp=sharing',   // <- paste your Google Drive / YouTube video link here
  summary:'A low-cost servo arm controlled from any phone browser, paired with a MATLAB kinematic model of the same arm.',
  problem:'Prototype a functional arm of the kind used in packing and filling lines, using cheap parts, and keep a simulation that mirrors the hardware.',
- role:'Built the ESP32-S3 firmware and browser control app, and the MATLAB rigid-body-tree model. (Team project: see the report for the full split.)',
+ role:'Built the ESP32-S3 firmware and browser control app, and the MATLAB rigid-body-tree model. (Team project: my part is stated here; the report lists the full split.)',
  mets:[{v:4,d:0,u:'',l:'Servos (3 joints + gripper)'},{v:14,d:0,u:' cm',l:'Modelled link reach'},{v:2,d:0,u:'',l:'Home presets (hard / soft)'}],
  highlights:[
   'The ESP32-S3 hosts its own Wi-Fi access point and serves a web page with sliders for base, shoulder and elbow, plus gripper buttons. No app install needed.',
@@ -273,7 +298,7 @@ const PROJECTS=[
   ['MATLAB twin','The same arm is modelled with DH parameters to visualise reach and joint limits.']],
  widget:'arm',
  notes:['The report describes the build qualitatively; no accuracy or repeatability figures were measured, so none are claimed here.','The playground above is a simple 2-link side view using the modelled 5 cm and 9 cm links. It is illustrative and not calibrated to the physical arm.'],
- flowTitle:'Browser-to-servo control',
+ doc:'assets/3dof-report.pdf',docLabel:'Report (PDF)',flowTitle:'Browser-to-servo control',
  flow:['Phone browser','Wi-Fi access point','ESP32-S3','Servo motors','Arm movement'],
  repo:'', // Add the public repository URL here when ready.
  links:[]
@@ -283,7 +308,7 @@ const PROJECTS=[
  tags:['IoT','Embedded'],status:'Design and firmware',
  disciplines:['Electrical Engineering','Embedded Systems','IoT'],
  grad:'linear-gradient(135deg,#166534,#0f172a)',
- bg:'https://drive.google.com/file/d/1WaYAEcnm73lQFVstqf647o156Z6AzNH1/view?usp=sharing',
+ bg:'assets/hydroponics.jpg',
  pics:[],
  video:'',
  summary:'An ESP32 monitoring and control design for a nutrient-film hydroponic lettuce system, with a Blynk dashboard, safety interlocks and local control that keeps working when Wi-Fi drops.',
@@ -302,7 +327,7 @@ const PROJECTS=[
   ['Act','Five relays drive circulation, air, light, fan and refill.'],
   ['Report','Telemetry and alerts go to the Blynk dashboard.']],
  notes:['This is a design and firmware project completed during a 2023 internship; the documentation was written up for this portfolio. The full-size growing structure was not built, and sensor values would need calibration before use.','Sample dashboards in the write-up show illustrative values, not measured data.'],
- flowTitle:'Sense, decide and actuate',
+ doc:'assets/hydroponics-report.pdf',docLabel:'Report (PDF)',flowTitle:'Sense, decide and actuate',
  flow:['Sensors','ESP32 control','Safety interlocks','5 relays','Blynk dashboard'],
  repo:'', // Add the public repository URL here when ready.
  links:[]
@@ -312,28 +337,37 @@ const PROJECTS=[
 /* Industry work (Thal Engineering). Display-only cards: heading, one-liner and a background picture (bg). They do not open. */
 const INDUSTRY=[
 {
- id:'olts',title:'Oil Level & Temperature Sensor (RS485 OLTS)',ctx:'Thal Engineering',year:'2026',
- tags:['Electrical Engineering','Power Distribution'],
- grad:'linear-gradient(135deg,#334155,#1e3a8a)',
- bg:'https://drive.google.com/file/d/1GiOK1rxNGf8xx5TqMpaaIY0BclXz0NSI/view?usp=sharing',                // <- background picture
- summary:'A sensor that measures transformer oil level and temperature and sends the data to the energy meter via RS485.'
+ id:'olts',title:'Oil Level & Temperature Sensor (RS485 OLTS)',ctx:'Thal Engineering',year:'2026',status:'In service: 50+ devices',
+ tags:['Embedded','Power Distribution'],specs:['STM32','RS485','220 VAC / 5 VDC','IP54'],
+ grad:'linear-gradient(135deg,#334155,#1e3a8a)',bg:'assets/olts.jpg',
+ summary:'A sensor that measures transformer oil level and temperature and sends the data to the energy meter over RS485, built for long-distance communication.',
+ role:'Firmware and circuit design.',stack:'STM32 microcontroller, RS485 long-distance communication, powered from 220 VAC or 5 VDC.',
+ mets:[{v:50,d:0,u:'+',l:'Devices deployed in the field'},{v:54,d:0,u:'',l:'IP rating (IP54)'}],
+ verify:['Passed the IEC 61000 EMC tests, including surge and RF immunity, and high-voltage testing.','Passed impulse testing on a 54-rated (IP54) enclosure.','Tests witnessed and certified by PPMC.'],
+ outcome:'In normal field use on 50+ devices; sales are ongoing.'
 },
 {
- id:'apms',title:'APMS: Asset Protection and Management System',ctx:'Thal Engineering',year:'2026',
- tags:['Electrical Engineering','Power Distribution'],
- grad:'linear-gradient(135deg,#334155,#7c2d12)',
- bg:'https://drive.google.com/file/d/1Sj1tAuA8Jj-6wjfHJ7vwnHlF2MBXyQOR/view?usp=sharing',
- summary:'An Asset Protection and Management System for power distribution companies. It provides remote control, monitoring and load shedding of distribution transformers from the LT side, plus energy metering including active power, energy and phase-wise current and voltage. It can remotely trip the supply to homes based on low or high oil level, high temperature or power parameters. The system runs on 220 VAC and 5 VDC.'
+ id:'apms',title:'APMS: Asset Protection and Management System',ctx:'Thal Engineering',year:'2026',status:'Field trial: 5 units deployed',
+ tags:['Embedded','Power Distribution'],specs:['STM32','GSM','220 VAC / 5 VDC','25-200 kVA'],
+ grad:'linear-gradient(135deg,#334155,#7c2d12)',bg:'assets/apms.png',
+ summary:'A system for power distribution companies that provides remote control, monitoring and load shedding of distribution transformers from the LT side, plus energy metering including active power, energy and phase-wise current and voltage. It can trip the supply on low or high oil level, high temperature or power parameters, and it trips instantly even without GSM communication.',
+ role:'Firmware and circuit design, control wiring and enclosure design.',stack:'STM32 microcontroller with GSM communication; local trip logic that works without GSM.',
+ mets:[{v:5,d:0,u:' s',l:'Response time'},{v:5,d:0,u:'',l:'Units deployed in the field'},{v:200,d:0,u:' kVA',l:'Largest transformer size supported'}],
+ verify:['Field trial on live networks.'],
+ outcome:'5 units deployed, controlling major areas in central and northern Pakistan. Developed for 25, 50, 100 and 200 kVA transformers.'
 },
 {
- id:'dcrc',title:'DCRC HT: Remote HT-Side Load Shedding',ctx:'Thal Engineering',year:'2026',
- tags:['Electrical Engineering','Power Distribution'],
- grad:'linear-gradient(135deg,#334155,#14532d)',
- bg:'https://drive.google.com/file/d/1g_-urbDOzK4l8i51KbYQRAvI25YzbQhj/view?usp=sharing',
- summary:'Remote load shedding on the HT side by controlling a load break switch, with tripping based on parameters such as door opening, oil level, temperature or battery failure. The system runs on 220 VAC and 24 VDC.'
+ id:'dcrc',title:'DCRC HT: Remote HT-Side Load Shedding',ctx:'Thal Engineering',year:'2026',status:'Field trial, pilot order',
+ tags:['Embedded','Power Distribution'],specs:['STM32','GSM','220 VAC / 24 VDC','11 kV switch'],
+ grad:'linear-gradient(135deg,#334155,#14532d)',bg:'assets/dcrc.jpg',
+ summary:'Remote load shedding on the HT side by controlling an ABB load break switch on 11 kV lines, with tripping based on parameters such as door opening, oil level, temperature or battery failure. Scheduled load shedding runs 4 times a day independent of GSM.',
+ role:'Firmware and circuit design, testing, control wiring, and enclosure design and development.',stack:'STM32 microcontroller with GSM communication; controls an ABB load break switch.',
+ mets:[{v:5,d:0,u:' s',l:'Response after fault detection'},{v:4,d:0,u:'',l:'Load-shedding cycles per day, without GSM'},{v:11,d:0,u:' kV',l:'Switched by the load break switch'}],
+ verify:['Field trial in progress on live substations and pole-mounted transformers.'],
+ outcome:'Initial pilot order of 5 units now in field trial with the customer; mass production is planned after the trial.'
 }
 ];
-const SKILLS=['Electrical engineering','C / C++','Arduino & ESP32','FreeRTOS','Python','Flask','JavaScript / Blockly','MATLAB','Raspberry Pi','Few-shot learning','MobileNetV2 / YOLO','SolidWorks / CAD','ANSYS FEA','3D printing (PLA/PETG)','IoT / Blynk'];
+const SKILLS=['STM32 firmware','ESP32 / Arduino','C / C++','FreeRTOS','RS485','GSM modules','IoT dashboards (Blynk)','Control wiring and enclosure design','IEC 61000 EMC product testing','Python','Flask','JavaScript / Blockly','MATLAB','Raspberry Pi','Few-shot learning','MobileNetV2 / YOLO','SolidWorks / CAD','ANSYS FEA','3D printing (PLA/PETG)'];
 /* ===================== END OF THE PARTS YOU EDIT ===================== */
 
 const $=s=>document.querySelector(s);
@@ -344,7 +378,11 @@ function embed(u){let m=u.match(/\/d\/([^/]+)/)||u.match(/[?&]id=([^&]+)/);
  return m?`https://www.youtube.com/embed/${m[1]}`:u}
 function img(u){if(!u)return'';const m=u.match(/drive\.google\.com.*\/d\/([^/?]+)/)||u.match(/drive\.google\.com.*[?&]id=([^&]+)/);
  return m?`https://drive.google.com/thumbnail?id=${m[1]}&sz=w1600`:u}
-function vis(o,cls){return o.bg?`<div class="${cls}"><div class="bgb" style="background-image:url('${img(o.bg)}')"></div><img src="${img(o.bg)}" alt="${o.title}"></div>`:`<div class="${cls}" style="background-image:${o.grad}"></div>`}
+function vis(o,cls){return `<div class="${cls}" style="background-image:${o.grad}">${o.bg?`<div class="bgb" style="background-image:url('${img(o.bg)}')"></div><img src="${img(o.bg)}" alt="${o.title}" referrerpolicy="no-referrer" onerror="this.previousElementSibling.style.display='none';this.style.display='none'">`:''}</div>`}
+function vid(u,t){return /\.(mp4|mov|webm)$/i.test(u)?`<video controls preload="metadata" src="${u}" title="${t}"></video>`:`<iframe src="${embed(u)}" allow="autoplay;fullscreen" allowfullscreen loading="lazy" title="${t}"></iframe>`}
+function proofHTML(p){const src=p.repo||(p.links&&p.links[0]?p.links[0][1]:'');
+ const it=[['Source code',src],[p.docLabel||'Report',p.doc||''],['Video',p.video||''],['Photos',((p.pics&&p.pics.length)||p.bg)?'#':''],['Measured data',p.bars?'#':'']];
+ return `<h4>Proof</h4><div class="proof">${it.map(([k,u])=>u?(u==='#'?`<span class="pf ok">&#10003; ${k}</span>`:`<a class="pf ok" href="${u}" target="_blank" rel="noopener">&#10003; ${k}</a>`):`<span class="pf no">${k}: not public</span>`).join('')}</div>`}
 function bgStyle(o){return o.bg?`background-image:linear-gradient(rgba(5,9,26,.35),rgba(5,9,26,.55)),url('${img(o.bg)}')`:`background-image:${o.grad}`}
 function pics(arr,label){const valid=(arr||[]).filter(Boolean);if(!valid.length)return'';
  const a=valid.map((u,i)=>`<img src="${img(u)}" alt="${label} picture ${i+1}" loading="lazy">`).join('');
@@ -362,7 +400,7 @@ function startFlowAnimation(d,p){const box=d.querySelector('.flow-visual');if(!b
  tick();d._flowTimer=setInterval(tick,950)}
 function projectLinks(p){const links=[...(p.links||[])];if(p.repo)links.push(['GitHub repository',p.repo]);
  const html=links.map(l=>`<a class="btn" href="${l[1]}" target="_blank" rel="noopener">${l[0]}</a>`).join('');
- const slot=(!p.repo&&['arm','hydro'].includes(p.id))?`<div class="repo-slot">GitHub repository link reserved — add the URL in this project’s <code>repo</code> field.</div>`:'';
+ const slot=(SHOW&&!p.repo&&['arm','hydro'].includes(p.id))?`<div class="repo-slot">GitHub repository link reserved — add the URL in this project’s <code>repo</code> field.</div>`:'';
  return html||slot?`<h4>Links</h4>${html}${slot}`:''}
 function hydroDiagram(){return `<div class="hydro-visual"><div class="flow-caption"><strong>Nutrient-film circulation loop</strong><span>Conceptual system diagram</span></div><div class="hydro-scroll"><svg viewBox="0 0 720 205" role="img" aria-label="Hydroponic reservoir, pump, growing channel, sensors and ESP32 controller">
  <defs><linearGradient id="hTank" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#254b79"/><stop offset="1" stop-color="#14294a"/></linearGradient></defs>
@@ -384,15 +422,28 @@ const L=[['Email',CONFIG.email&&'mailto:'+CONFIG.email,CONFIG.email],['Call',CON
 $('#links').innerHTML=L.map(([n,u,t])=>`<a class="btn ${n=='Email'?'p':''}" href="${u}" ${/^http/.test(u)?'target="_blank" rel="noopener"':''}>${t}</a>`).join('');
 $('#sk').innerHTML=SKILLS.map(s=>`<span>${s}</span>`).join('');
 $('#yr').textContent=new Date().getFullYear();
+if(CONFIG.cv)['navcv','herocv'].forEach(i=>{const a=document.getElementById(i);a.href=CONFIG.cv;a.target='_blank';a.rel='noopener'});
 
 /* ===== cards ===== */
 const cats=['All',...new Set(PROJECTS.flatMap(p=>p.tags))];let cur='All';
-function card(p,ind){return`<article class="card rv ${ind?'static':''}" ${ind?'':`data-id="${p.id}" tabindex="0"`}>
+function card(p,ind){const click=!ind||p.role;
+ const mets=`<div class="mets">${p.mets.map(m=>`<div class="met"><b>${num(m)}</b><span>${m.l}</span></div>`).join('')}</div>`;
+ return`<article class="card rv ${click?'':'static'}" ${click?`data-id="${p.id}" data-k="${ind?'i':'p'}" tabindex="0" role="button" aria-label="Open details: ${p.title}"`:''}>
  ${vis(p,'vis')}
  <div class="in"><div class="meta">${p.ctx} · ${p.year}</div><h3>${p.title}</h3>${p.status?`<div class="status">${p.status}</div>`:''}
- <div class="tags">${p.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
- <p>${ind?p.summary:p.summary}</p>
- ${ind?`<div class="req">Industry work is available on request.</div>`:`<div class="mets">${p.mets.map(m=>`<div class="met"><b>${num(m)}</b><span>${m.l}</span></div>`).join('')}</div>`}</div></article>`}
+ <div class="tags">${p.tags.map(t=>`<span class="tag">${t}</span>`).join('')}${(p.specs||[]).map(t=>`<span class="tag sp">${t}</span>`).join('')}</div>
+ <p>${p.summary}</p>${mets}</div></article>`}
+function openIndustry(id){const d=$('#dlg'),p=INDUSTRY.find(x=>x.id==id);if(!p)return;
+ const sec=(h,t)=>t?`<h4>${h}</h4><p>${t}</p>`:'';
+ const mail=`mailto:${CONFIG.email}?subject=${encodeURIComponent('Details request: '+p.title)}&body=${encodeURIComponent('Hello Izn,\n\nI would like more details about '+p.title+'.\n')}`;
+ d.innerHTML=`<div class="dh"><h3>${p.title}</h3><button class="x" aria-label="Close">&times;</button></div><div class="db dialog-content">${vis(p,'banner')}
+ <p class="disc">${p.ctx} · ${p.year} · <b>${p.status}</b></p><p>${p.summary}</p>
+ ${sec('My contribution',p.role)}${sec('Technology',p.stack)}
+ <h4>Key numbers</h4><div class="mets">${p.mets.map(m=>`<div class="met"><b>${num(m)}</b><span>${m.l}</span></div>`).join('')}</div>
+ <h4>Verification</h4><ul>${p.verify.map(v=>`<li>${v}</li>`).join('')}</ul>
+ ${sec('Outcome',p.outcome)}<h4>Proof and access</h4><p>Supporting material is shared on request, subject to my employer's approval.</p>
+ <a class="btn p" href="${mail}">Request details by email</a></div>`;
+ d.showModal();counters(d);d.querySelector('.x').onclick=()=>d.close()}
 function render(){
  $('#chips').innerHTML=cats.map(c=>`<button class="chip ${c==cur?'on':''}" data-c="${c}">${c}</button>`).join('');
  $('#grid').innerHTML=PROJECTS.filter(p=>cur=='All'||p.tags.includes(cur)).map(p=>card(p,false)).join('');
@@ -400,8 +451,9 @@ function render(){
  observe();
 }
 $('#chips').onclick=e=>{if(e.target.dataset.c){cur=e.target.dataset.c;render()}};
-function pick(e){const c=e.target.closest('.card');if(c)open(c.dataset.id)}
-$('#grid').onclick=pick;$('#grid').onkeydown=e=>{if(e.key=='Enter')pick(e)};
+function pick(e){const c=e.target.closest('.card[data-id]');if(!c)return;c.dataset.k==='i'?openIndustry(c.dataset.id):openProject(c.dataset.id)}
+$('#grid').onclick=pick;$('#igrid').onclick=pick;
+$('#grid').onkeydown=$('#igrid').onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();pick(e)}};
 
 function buildRobotWidget(){return `<div class="bc" id="build-coder">
  <div class="bch"><span>Build-IT Robot Lab</span><small>Block code · simulated movement</small></div>
@@ -424,12 +476,12 @@ function buildRobotWidget(){return `<div class="bc" id="build-coder">
   </div>
  </div>
 </div>`}
-function open(id){const d=$('#dlg'),p=PROJECTS.find(x=>x.id==id);if(!p)return;
+function openProject(id){const d=$('#dlg'),p=PROJECTS.find(x=>x.id==id);if(!p)return;
  const head=`<div class="dh"><h3>${p.title}</h3><button class="x" aria-label="Close">&times;</button></div>`;
  const hydro=p.id==='hydro';
  let body=`${vis(p,'banner')}
   <p class="disc">${p.ctx} · ${p.year}</p>
-  <p class="disc"><b>Disciplines:</b> ${p.disciplines.join(', ')}</p>`;
+  <p class="disc"><b>Disciplines:</b> ${p.disciplines.join(', ')}</p>${proofHTML(p)}`;
  if(hydro){
   body+=`<p>${p.summary}</p><h4>My role</h4><p>${p.role}</p>
    <h4>Key numbers</h4><div class="mets">${p.mets.map(m=>`<div class="met"><b>${num(m)}</b><span>${m.l}</span></div>`).join('')}</div>
@@ -440,8 +492,8 @@ function open(id){const d=$('#dlg'),p=PROJECTS.find(x=>x.id==id);if(!p)return;
   body+=`<h4>Problem</h4><p>${p.problem}</p>
    <h4>My role</h4><p>${p.role}</p>
    <h4>Key numbers</h4><div class="mets">${p.mets.map(m=>`<div class="met"><b>${num(m)}</b><span>${m.l}</span></div>`).join('')}</div>
-   ${p.video?`<h4>${p.videoLabel||'Demo'}</h4><iframe src="${embed(p.video)}" allow="autoplay;fullscreen" allowfullscreen loading="lazy" title="${p.videoLabel||p.title}"></iframe>`:''}
-   ${p.id==='buildit'&&!p.video?`<h4>Dashboard Interface</h4><div class="video-placeholder">Dashboard Interface video slot. Add its Google Drive or YouTube URL to the Build-IT <code>video</code> field in the PROJECTS section.</div>`:''}
+   ${p.video?`<h4>${p.videoLabel||'Demo'}</h4>${vid(p.video,p.videoLabel||p.title)}`:''}
+   ${SHOW&&p.id==='buildit'&&!p.video?`<h4>Dashboard Interface</h4><div class="video-placeholder">Dashboard Interface video slot. Add its Google Drive or YouTube URL to the Build-IT <code>video</code> field in the PROJECTS section.</div>`:''}
    ${flowMarkup(p)}
    ${p.id==='buildit'?`<h4>Try block coding</h4>${buildRobotWidget()}`:''}
    ${p.widget=='arm'?`<h4>Try the geometry</h4><div class="pg"><canvas id="arm" width="380" height="240"></canvas><div>
@@ -494,7 +546,7 @@ function initBuildRobotWidget(d){
  clear.onclick=()=>{if(running)return;program=[];robot={x:4,y:3,angle:-Math.PI/2};draw(robot);renderProgram();source.hidden=true;status.textContent='Program cleared. Robot reset.'};
  run.onclick=async()=>{if(running||!program.length){if(!program.length)status.textContent='Add movement blocks before running.';return}setBusy(true);status.textContent='Running program…';robot={x:4,y:3,angle:-Math.PI/2};draw(robot);
   try{for(let bi=0;bi<program.length;bi++){const b=program[bi];status.textContent=`Block ${bi+1}/${program.length}: ${blockLabel(b)}`;
-   for(let n=0;n<b.steps;n++){
+   for(let n=0;n<b.steps;n++){if(!d.open)throw new Error('boundary');
     let target={...robot};
     if(b.action==='forward'||b.action==='reverse'){const sign=b.action==='forward'?1:-1;target.x+=Math.round(Math.cos(robot.angle))*sign;target.y+=Math.round(Math.sin(robot.angle))*sign;
      if(target.x<0||target.x>=cols||target.y<0||target.y>=rows){status.textContent='Boundary reached. Program stopped safely.';throw new Error('boundary')}
@@ -527,7 +579,7 @@ render();
 document.querySelectorAll('section .rv').forEach(n=>io.observe(n));
 
 /* ===== role rotator ===== */
-const W=['robots','embedded systems','IoT devices','power-distribution products','things that snap together'];let wi=0;
+const W=['power-distribution monitoring systems','embedded firmware','industrial IoT devices','transformer protection and control','robots that snap together'];let wi=0;
 setInterval(()=>{const e=$('#rot');e.style.opacity=0;setTimeout(()=>{wi=(wi+1)%W.length;e.textContent=W[wi];e.style.opacity=1},300)},2600);
 
 /* ===== hero: swirling night sky (original animation inspired by Van Gogh's "The Starry Night") ===== */
@@ -573,7 +625,7 @@ setInterval(()=>{const e=$('#rot');e.style.opacity=0;setTimeout(()=>{wi=(wi+1)%W
   const cx=w*.1,cb=h*.93,ch=h*.5;s.beginPath();s.moveTo(cx-m*.03,cb);
   s.bezierCurveTo(cx-m*.07,cb-ch*.4,cx-m*.01,cb-ch*.7,cx+Math.sin(t*.0012)*m*.01,cb-ch);
   s.bezierCurveTo(cx+m*.05,cb-ch*.65,cx+m*.075,cb-ch*.35,cx+m*.03,cb);s.closePath();s.fill()}
- function loop(){step();sky();requestAnimationFrame(loop)}
+ let onScreen=true;new IntersectionObserver(e=>{onScreen=e[0].isIntersecting}).observe(hero);function loop(){if(onScreen&&!document.hidden){step();sky()}requestAnimationFrame(loop)}
  function start(){size();if(rm){for(let i=0;i<500;i++){step();t+=16}sky()}else loop()}
  let ready=false;start();ready=true;
  addEventListener('resize',()=>{if(!ready)return;size();if(rm){for(let i=0;i<500;i++){step();t+=16}sky()}})
