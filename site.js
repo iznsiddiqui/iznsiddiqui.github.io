@@ -73,7 +73,7 @@ phoneDlg.addEventListener("click", (event) => {
   }
 });
 
-document.querySelectorAll("[data-phone-popup]").forEach((button) => {
+document.querySelectorAll("[data-phone]").forEach((button) => {
   button.addEventListener("click", (event) => {
     event.preventDefault();
     phoneDlg.showModal();
@@ -101,7 +101,7 @@ if (roleElement && roles.length > 0) {
 }
 
 // Scroll reveal
-const revealElements = document.querySelectorAll(".reveal");
+const revealElements = document.querySelectorAll(".rv");
 
 if ("IntersectionObserver" in window) {
   const revealObserver = new IntersectionObserver(
